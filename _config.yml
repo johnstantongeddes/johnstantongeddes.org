@@ -1,0 +1,20 @@
+## jekyll config options
+title : John Stanton-Geddes
+exclude : [_posts/_private/, assets/figures]
+
+## metadata
+author :
+  name : John Stanton-Geddes
+  email : john.stantongeddes.research@gmail.com
+  github : johnstantongeddes
+  mendeley: john-stantongeddes
+url: http://www.johnstantongeddes.org
+
+baseurl : 
+
+## markdown parser
+markdown : pandoc
+pandoc:
+  extensions: 
+    - smart
+    - mathjax

@@ -1,0 +1,33 @@
+---
+layout: html5
+root: "../../../../"
+---
+
+<div class="navbar navbar-inverse navbar-static-top">
+            <div class="navbar-inner">
+                <a class="brand" href="{{ page.root }}index.html">John Stanton-Geddes</a>
+                <ul class="nav">
+                    <li>
+                        <a href="{{ page.root }}categories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a href="{{ page.root }}tags.html">Tags</a>
+                    </li>                  
+                </ul>
+</div>
+
+<div class="span3">
+	</br>
+	<img src="{{ page.root }}assets/img/glyphicons_045_calendar.png" /> {{ page.date | date: "%d %B %Y" }}	
+        </br>  
+	</br> 
+	<img src="{{ page.root }}assets/img/glyphicons_066_tags.png" /> {{ page.tags }}
+</div>
+
+<div class="span9">
+	<h1> {{ page.title }} </h1>
+
+	{{ content }}
+
+</div>
+

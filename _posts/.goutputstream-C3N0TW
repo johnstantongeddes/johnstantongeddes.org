@@ -1,0 +1,10 @@
+2013.03.21
+============
+
+
+Reading
+----------
+
+Garud et al. (2013) Soft selective sweeps are the primary mode of recent adaptation in *Drosophila melanogaster*. arXiv:1303.0906
+
+  - authors present an interesting new statistic (H12) that can detect both hard and soft sweeps with equal power. the basic idea is quite simple - calculate homozygosity with the first and second most abundant haplotypes combined - yet appears quite powerful. Power of this test is high for hard and soft sweeps that are young and strong. This test is followed up by a second test (H2/H1), contingent on a significant results from the first test, that determines whether the sweep was soft or hard based on the ratio of all haplotypes excluding the most frequent (H2) to all haplotypes (H1). Main finding of the paper is that *all* recent sweeps in Drosophila are soft sweeps. This is plausible if mutation is not limiting adaptation, but the effective population size of Drosophila is on the order of 10*8 instead of 10*6 as estimated from heterozygosity at neutral sites. 

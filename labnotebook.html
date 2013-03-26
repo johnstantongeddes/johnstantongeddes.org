@@ -1,0 +1,16 @@
+---
+layout: pages
+title: Lab notebook
+---
+
+<div>
+<p> Caveat empor </p>
+
+<ul class="entries">
+	{% for post in site.posts %}
+	<li>
+		{{ post.date | date: "%d %B %Y" }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+	</li>
+	{% endfor %}
+</ul>
+</div>

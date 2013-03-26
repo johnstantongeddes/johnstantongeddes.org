@@ -1,0 +1,9 @@
+/* add style here */
+ html { 
+     background-image: url('assets/img/natural_paper/natural_paper.png');
+     background-repeat: repeat; 
+ }
+
+ .body {
+     background-color: transparent; 
+ }
