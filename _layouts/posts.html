@@ -21,7 +21,7 @@ root: "../../../../"
 	<img src="{{ page.root }}assets/img/glyphicons_045_calendar.png" /> {{ page.date | date: "%d %B %Y" }}	
         </br>  
 	</br> 
-	<img src="{{ page.root }}assets/img/glyphicons_066_tags.png" /> {{ page.tags }}
+	<img src="{{ page.root }}assets/img/glyphicons_066_tags.png" /> <p> {{ page.tags | array_to_sentence_string }} </p>
 </div>
 
 <div class="span9">
