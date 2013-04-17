@@ -8,7 +8,7 @@ tags:
 modified: 2013-04-12
 ---
 
-The first entry in my open lab notebook! Setting up an open lab notebook has been on my mind for a while, and with starting a new position I decided to give it a go. My motivations for this come from PhD stats committee member Charlie Geyer who has been writing about [reproducible research before it was cool](http://users.stat.umn.edu/~geyer/Sweave/) and the recent availability of tools to make it possible for marginally-computer literate biologists such as myself. Specifically, the [knitr](http://yihui.name/knitr/) package in R for writing literate scripts, git and [github](https://github.com) for version control, the [pandoc markdown](http://johnmacfarlane.net/pandoc/) program for enabling convenient file formats, and Carl Boettiger for putting this all together in his tremendous [lab notebook](http://www.carlboettiger.info/) with a great [introduction](www.carlboettiger.info/2012/12/30/learning-jekyll.html) to "blogging like a hacker" using [jekyll](https://github.com/mojombo/jekyll). I want to emphaszie, as Carl points out, this is a *lab notebook*, not a blog. There are many great blogs in ecology and evolution. I'll let you find the ones you like on your own.
+The first entry in my open lab notebook! Setting up an open lab notebook has been on my mind for a while, and with starting a new position I decided to give it a go. My motivations for this come from PhD stats committee member Charlie Geyer who has been writing about [reproducible research before it was cool](http://users.stat.umn.edu/~geyer/Sweave/) and the recent availability of tools to make it possible for marginally-computer literate biologists such as myself. Specifically, the [knitr](http://yihui.name/knitr/) package in R for writing literate scripts, git and [github](https://github.com) for version control, the [pandoc markdown](http://johnmacfarlane.net/pandoc/) program for enabling convenient file formats, and Carl Boettiger for putting this all together in his tremendous [lab notebook](http://www.carlboettiger.info/) with a great [introduction](http://www.carlboettiger.info/2012/12/30/learning-jekyll.html) to "blogging like a hacker" using [jekyll](https://github.com/mojombo/jekyll). I want to emphaszie, as Carl points out, this is a *lab notebook*, not a blog. There are many great blogs in ecology and evolution. I'll let you find the ones you like on your own.
 
 ## So why go through the trouble to host an open lab notebook? ##
 
@@ -27,7 +27,7 @@ The first entry in my open lab notebook! Setting up an open lab notebook has bee
 
 ## So are there downsides? ##
 
-Sure - some people would be concerned about exposing mistakes (embarrassing) or getting beat in the race to publish. That said, Carl's [experiment](http://www.carlboettiger.info/2012/09/28/Welcome-to-my-lab-notebook.html) seems to be going well so I'm not too worried. 
+Sure - some people would be concerned about exposing mistakes (embarrassing) or getting beat in the race to publish. Hopefully a small risk relative to the benefits.
 
 
 
