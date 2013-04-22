@@ -5,5 +5,8 @@ _site/
 assets/img
 assets/figures
 
-# Ignore any backup files
+# Ignore any backup files and other OS generated files
 *~
+*.swp
+*.Rhistory
+.goutput*
