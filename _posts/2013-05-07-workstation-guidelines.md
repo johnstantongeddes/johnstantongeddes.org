@@ -6,6 +6,7 @@ tags:
   - reproducible research
   - system administration
   - git
+modified: 2013-05-24
 ---
 
 ## System
@@ -13,7 +14,7 @@ Dell T7600 workstation running Ubuntu 12.04
 
 * Processor: Four core XEON E5-2609, 2.4GHz
 * Memory: 64GB DDR3 RDIMM 1600 ECC, 8x8GB
-* Hard drive: 4x3TB 3.5inch 7200 SATA 6Gb/s in mirrored RAID for redundancy
+* Hard drive: 4x3TB 3.5inch 7200 SATA 6Gb/s in RAID 6 for redundancy
 
 Note that regardless of Dell stating that the system could run linux, no linux drivers were available for the installed PERC H310 SATA/SAS RAID controller. [Pine Computers](http://pinecomputers.net/) replaced the PERC card with an Adaptec AAC-RAID and were then able to install Ubuntu. 
 
@@ -50,13 +51,45 @@ Within each project directory, I recommend the following directories
 
 ## Running a job
 
-With 4 cores, only 3 long-term jobs can be run simultaneously. Before scheduling a job, check processor usage by typing in the command line:
+To run a script, use the command
+
+~~~
+nohup nice -n 19 Rscript script.r &
+~~~
+
+where the `nohup` command specifies that your job will be run without hangups (if your terminal becomes disconnected) and `nice` specifies low priority to avoid swamping system resources. Replace `Rscript` with `bash` for a shell script, or `python` fore a python script, etc...
+
+The output of the script will be concatenated to the file nohup.out in the working directory.
+
+Note that while the `nice` command will help maintain system resources, the antlab system has only 4 cores, so only 3 long-term jobs can be run simultaneously. Before scheduling a job, check processor usage by typing in the command line:
 
 ~~~
 top -n 3
 ~~~  
 
 You will see the list of commands, updated every 3 seconds,  sorted by their current CPU usage. The long running jobs will be at the very top consuming >85% of CPU time (3d column.) Only 3 jobs consuming >85% of CPU can be run simultaneously. You can also check memory usage by hitting `Shift-f` and selecting `n` then press enter. The active processes will be ordered by memory usage and you can see what percent is still available.
+
+## Software installation
+
+Requires administrator priviledges. 
+
+Software is either installed using the [Ubuntu Software Center](https://wiki.ubuntu.com/SoftwareCenter) or apt-get.
+
+Non-standard or newer versions of programs than are available through the software center are installed into `\opt\software` and symbolically linked from `/usr/local/bin` using 
+
+~~~
+ln -s \opt\software\<target> <link>
+~~~
+
+so that they are on the $PATH and system-wide accessible. See [for more information](http://askubuntu.com/questions/1148/what-is-the-best-place-to-install-user-apps). May need to set permissions for group executability using
+
+~~~
+chmod ug+x <file>
+~~~
+
+
+
+Software can be installed in home directory for personal use at your own risk.
 
 
 ## References
