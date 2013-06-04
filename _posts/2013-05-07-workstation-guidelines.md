@@ -6,7 +6,7 @@ tags:
   - reproducible research
   - system administration
   - git
-modified: 2013-05-24
+modified: 2013-06-04
 ---
 
 ## System
@@ -17,7 +17,6 @@ Dell T7600 workstation running Ubuntu 12.04
 * Hard drive: 4x3TB 3.5inch 7200 SATA 6Gb/s in RAID 6 for redundancy
 
 Note that regardless of Dell stating that the system could run linux, no linux drivers were available for the installed PERC H310 SATA/SAS RAID controller. [Pine Computers](http://pinecomputers.net/) replaced the PERC card with an Adaptec AAC-RAID and were then able to install Ubuntu. 
-
 
 ## File management
 
@@ -91,6 +90,9 @@ chmod ug+x <file>
 
 Software can be installed in home directory for personal use at your own risk.
 
+## System maintenance
+
+System and software updates will be performed the first Monday of every month, so if you are going to schedule long-running jobs around this time let me know if advance.
 
 ## References
 
