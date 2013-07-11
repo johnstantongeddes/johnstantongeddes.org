@@ -91,6 +91,14 @@ tags:
 <td style="text-align: left;">microarray</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Siebert</td>
+<td style="text-align: center;">2011</td>
+<td style="text-align: center;">PLoS ONE</td>
+<td style="text-align: center;">cnidaria</td>
+<td style="text-align: left;">field-collected samples, </td>
+<td style="text-align: left;">RNAseq</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Wolf</td>
 <td style="text-align: center;">2010</td>
 <td style="text-align: center;">Molecular Ecology</td>
@@ -98,7 +106,7 @@ tags:
 <td style="text-align: left;">field-collected</td>
 <td style="text-align: left;">microarray</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Holliday</td>
 <td style="text-align: center;">2008</td>
 <td style="text-align: center;">New Phytologist</td>
@@ -106,7 +114,7 @@ tags:
 <td style="text-align: left;">4 yr-old spruce saplings grown in common garden from seed collected from natural populations</td>
 <td style="text-align: left;">microarray</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Whitehead</td>
 <td style="text-align: center;">2006</td>
 <td style="text-align: center;">PNAS</td>

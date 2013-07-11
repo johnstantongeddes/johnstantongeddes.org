@@ -6,7 +6,7 @@
 jekyll
 
 ## Copy site to repository for github hosting
-git add .
+git add -A
 git commit -m "update site"
 git pull
 git push origin master
