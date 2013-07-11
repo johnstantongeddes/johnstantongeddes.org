@@ -31,7 +31,7 @@ Edits to Genomic estimation of heritability manuscript.
 
 Finished guide to using git/github and sent to Nick for test.
 
-ggplot2 theme options: http://stackoverflow.com/questions/10399930/how-to-change-axis-label-color-in-ggplot2
+[ggplot2 theme options](http://stackoverflow.com/questions/10399930/how-to-change-axis-label-color-in-ggplot2)
 
 
 ## 2013-06-19
