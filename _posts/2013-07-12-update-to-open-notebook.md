@@ -1,6 +1,6 @@
 ---
 layout: posts
-category: ecological genetics
+category: open science
 title: Update on open lab notebook
 tags:
   - open science
