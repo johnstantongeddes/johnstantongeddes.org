@@ -1,6 +1,6 @@
 ---
 layout: posts
-category: computing
+category: open science
 title: starting an open lab notebook
 tags: 
   - website
