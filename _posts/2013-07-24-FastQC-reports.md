@@ -1,12 +1,14 @@
 ---
 layout: posts
-category: ecological genetics
-title: Gordon Conference
+category: ApTranscriptome
+title: RNAseq QC
 tags:
-  - conference
-  - genomics
+  - Aphaenogaster
+  - RNAseq
+  - cutadapt
+  - FastQC
 ---
 
-Spent the week at the Gordon Research Conference on Ecological and Evolutionary Genomics at the University of New England in Biddeford, ME. Per GRC guidelines, all information is considered confidential and I've kept my notes on old-fashioned paper.  
+Quality control for RNAseq samples for Aphaenogaster picea/rudis transcriptome
 
-[Picture of conference attendees]({{ site.url }}/assets/files/grcphoto_2013_ecolevol.pdf) - I'm in the middle of the second row.
+[A22-10]({{ site.url }}/assets/files/A22-10-R1_val_1.fa_fastqc/fastqc_report.html)
