@@ -1,6 +1,6 @@
 ---
 layout: posts
-category: AphGxL
+category: ApGXL
 title: Summary of sample treatment for transcriptomic studies
 tags:
   - transcriptomics

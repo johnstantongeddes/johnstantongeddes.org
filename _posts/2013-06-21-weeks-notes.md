@@ -1,6 +1,6 @@
 ---
 layout: posts
-category: ecological genetics
+category: MtGCTA
 title: Notes for week of June 17
 tags:
   - Aphaenogaster

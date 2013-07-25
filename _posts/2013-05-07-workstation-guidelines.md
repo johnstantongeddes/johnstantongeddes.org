@@ -56,7 +56,7 @@ To run a script, use the command
 nohup nice -n 19 Rscript script.r &
 ~~~
 
-where the `nohup` command specifies that your job will be run without hangups (if your terminal becomes disconnected) and `nice` specifies low priority to avoid swamping system resources. Replace `Rscript` with `bash` for a shell script, or `python` fore a python script, etc...
+where the `nohup` command specifies that your job will be run without hangups (if your terminal becomes disconnected) and `nice` specifies low priority to avoid swamping system resources, and the `&` means that the job runs in the background so you can continue working in the terminal. Replace `Rscript` with `bash` for a shell script, or `python` fore a python script, etc...
 
 The output of the script will be concatenated to the file nohup.out in the working directory.
 
@@ -68,16 +68,31 @@ top -n 3
 
 You will see the list of commands, updated every 3 seconds,  sorted by their current CPU usage. The long running jobs will be at the very top consuming >85% of CPU time (3d column.) Only 3 jobs consuming >85% of CPU can be run simultaneously. You can also check memory usage by hitting `Shift-f` and selecting `n` then press enter. The active processes will be ordered by memory usage and you can see what percent is still available.
 
+To kill a job that is running, use 
+
+~~~
+kill -9 PID
+~~~
+
+where PID is the process ID listed from the `top` command. If you have a job running in the background (e.g. with `&` at the end of the line) you can use:
+
+~~~
+kill $!
+~~~
+
+which kills the last process executed in the background.
+
+
 ## Software installation
 
 Requires administrator priviledges. 
 
 Software is either installed using the [Ubuntu Software Center](https://wiki.ubuntu.com/SoftwareCenter) or apt-get.
 
-Non-standard or newer versions of programs than are available through the software center are installed into `\opt\software` and symbolically linked from `/usr/local/bin` using 
+Non-standard or newer versions of programs than are available through the software center are installed into `/opt/software` and symbolically linked from `/usr/local/bin` using 
 
 ~~~
-ln -s \opt\software\<target> <link>
+ln -s /opt/software/<target> <link>
 ~~~
 
 so that they are on the $PATH and system-wide accessible. See [for more information](http://askubuntu.com/questions/1148/what-is-the-best-place-to-install-user-apps). May need to set permissions for group executability using
