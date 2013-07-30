@@ -1,7 +1,7 @@
 ---
 layout: posts
 category: ApTranscriptome
-title: RNAseq QC
+title: RNAseq read filtering prior to assembly 
 tags:
   - Aphaenogaster
   - RNAseq
@@ -43,7 +43,7 @@ Ran for all samples in ~ 1.5 hrs. 64-70% of reads merged - huge reduction in tot
 
 After merging reads, perform [digital normalization](http://ged.msu.edu/papers/2012-diginorm/) to discard redundant data (lower memory for assembly) and error removal.
 
-Following the [diginorm tutoral](http://ged.msu.edu/angus/diginorm-2012/tutorial.html) guidelines. Had to make changes as I'm not doing this on EC2.
+Following the [diginorm tutoral](http://ged.msu.edu/angus/diginorm-2012/tutorial.html) guidelines. Had to make changes as I am not doing this on EC2.
 
 1) Set PYTHONPATH to khmer location. This [website](http://www.stereoplex.com/blog/understanding-imports-and-pythonpath) helped understand PYTHONPATH
 
@@ -69,6 +69,7 @@ normalize-by-median [ ... ] file1.fa.keep file2.fa.keep file3.fa.keep
 
 Set up script to do this and started running...
 
-Todo 
+#### Todo 
+
 1) Run FastQC on merged reads
 
