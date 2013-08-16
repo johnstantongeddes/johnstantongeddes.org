@@ -12,7 +12,7 @@ modified: 2013-06-04
 ## System
 Dell T7600 workstation running Ubuntu 12.04
 
-* Processor: Four core XEON E5-2609, 2.4GHz
+* Processor: Two four-core XEON E5-2609, 2.4GHz
 * Memory: 64GB DDR3 RDIMM 1600 ECC, 8x8GB
 * Hard drive: 4x3TB 3.5inch 7200 SATA 6Gb/s in RAID 6 for redundancy
 
