@@ -23,8 +23,8 @@ Based on recommendation and other reading that samples down to 100ng still give 
 
 QC Result:
 
-![RNA QC Report]({{ page.root }}images/Stanton-Geddes_RNA_Sample_001_QC_Report.png "QC report")
+![RNA QC Report]({{ site.url }}/assets/img/Stanton-Geddes_RNA_Sample_001_QC_Report.png "QC report")
 
-[Agilent report for A. rudis samples]({{ page.root }}assets/files/040513_RNA_Nano_Tot_Euk_Stanton-Geddes-RNA_Sample_001_2.pdf)
+[Agilent report for A. rudis samples]({{ site.url }}/assets/files/040513_RNA_Nano_Tot_Euk_Stanton-Geddes-RNA_Sample_001_2.pdf)
 
-[Agilent report for A. picea samples]({{ page.root }}assets/files/040513_RNA_Nano_Tot_Euk_Stanton-Geddes-RNA_Sample_001_1.pdf)
+[Agilent report for A. picea samples]({{ site.url }}/assets/files/040513_RNA_Nano_Tot_Euk_Stanton-Geddes-RNA_Sample_001_1.pdf)
