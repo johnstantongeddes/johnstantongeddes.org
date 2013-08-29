@@ -37,7 +37,7 @@ and `q` to exit.
 You will see a screen like this: 
 
 <div class="row text-center">
-	<img src="{{ site.url }}/assets/img/top-output.png" alt="plot" width="363" height="232">
+	<img src="{{ site.url }}/assets/img/top-output.png" alt="plot" width="545" height="348">
 </div>
 
 which shows a list of the running processes (update every three seconds as specified by `-n 3`, sorted by CPU usage. This screenshot shows 6 jobs using over 100% CPU usage each! Percent usage is for 1 core, so a job using more than 100% is using more than one core.
