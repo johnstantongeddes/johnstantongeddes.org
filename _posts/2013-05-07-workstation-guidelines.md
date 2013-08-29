@@ -1,12 +1,12 @@
 ---
 layout: posts
 category: computing
-title: antlab workstation guidelines
+title: Antlab workstation guidelines
 tags: 
   - reproducible research
   - system administration
   - git
-modified: 2013-06-04
+modified: 2013-08-29
 ---
 
 ## System
@@ -16,7 +16,68 @@ Dell T7600 workstation running Ubuntu 12.04
 * Memory: 64GB DDR3 RDIMM 1600 ECC, 8x8GB
 * Hard drive: 4x3TB 3.5inch 7200 SATA 6Gb/s in RAID 6 for redundancy
 
-Note that regardless of Dell stating that the system could run linux, no linux drivers were available for the installed PERC H310 SATA/SAS RAID controller. [Pine Computers](http://pinecomputers.net/) replaced the PERC card with an Adaptec AAC-RAID and were then able to install Ubuntu. 
+[Note that regardless of Dell stating that the system could run linux](http://xkcd.com/349/), no linux drivers were available for the installed PERC H310 SATA/SAS RAID controller. [Pine Computers](http://pinecomputers.net/) replaced the PERC card with an Adaptec AAC-RAID and were then able to install Ubuntu. 
+
+
+
+## Running a job
+
+If you will be running a long (more than 1 hour) or memory intensive (more than ~20 GB) job...
+
+### FIRST: check system status
+
+The antlab system has 8 cores, so only 7 CPU-hungry long-term jobs can be run simultaneously before bad things happen. Before scheduling a job, check processor usage by typing in the command line:
+
+~~~
+top -n 3
+~~~  
+
+and `q` to exit.
+
+You will see a screen like this: 
+
+<div class="row text-center">
+	<img src="{{ site.url }}/assets/img/top-output.png" alt="plot" width="363" height="232">
+</div>
+
+which shows a list of the running processes (update every three seconds as specified by `-n 3`, sorted by CPU usage. This screenshot shows 6 jobs using over 100% CPU usage each! Percent usage is for 1 core, so a job using more than 100% is using more than one core.
+
+If you see this...**do not start a new job**. 
+
+Only 6 jobs using >85% of CPU can be run simultaneously before [bad things happen](http://xkcd.com/1084/). Wait until there are free CPUs. 
+
+You can also check memory usage by hitting `Shift-f` and selecting `n` then press enter. The active processes will be ordered by memory usage and you can see what percent is still available. If total memory usage is over 80%...wait to start your job.
+
+### Then, queue your job:
+
+To run a script, use the command
+
+~~~
+nohup nice -n 19 Rscript script.r &
+~~~
+
+where the `nohup` command specifies that your job will be run without hangups (if your terminal becomes disconnected) and `nice` specifies low priority to avoid swamping system resources, and the `&` means that the job runs in the background so you can continue working in the terminal. Replace `Rscript` with `bash` for a shell script, or `python` fore a python script, etc...
+
+The output of the script will be concatenated to the file **nohup.out** in the working directory.
+
+Note that while the `nice` command will help maintain system resources.
+
+### Stopping jobs
+
+To kill a job that is running, use 
+
+~~~
+kill -9 PID
+~~~
+
+where PID is the process ID listed from the `top` command. If you have a job running in the background (e.g. with `&` at the end of the line) you can use:
+
+~~~
+kill $!
+~~~
+
+which kills the last process executed in the background.
+
 
 ## File management
 
@@ -42,45 +103,62 @@ Within each project directory, I recommend the following directories
     - figures/
     - tables/
 
+### Symbolic linking
+
+For large files, use [symbolic linking](http://en.wikipedia.org/wiki/Symbolic_link) as much as possible to save disk space. The command 
+
+~~~
+ln -s </path/to/file/yourfile> <linkname>
+~~~
+
+will create a link to 'yourfile' in the current directory
+
+### File permissions
+
+The [chmod](http://en.wikipedia.org/wiki/Chmod) command sets file permissions
+
+For a file that you want to protect from accidental changes or overwrites, use
+
+~~~
+chmod a-w <file>
+~~~
+
+where the `a` means all users and the `-w` means remove write permissions. Similarly
+
+~~~
+chmod ug+x <file> 
+~~~
+
+would mean that `u` user and `g` group members can execute a file (for example, run a script) or 
+
+~~~
+chmod g-r <file>
+~~~
+
+would mean that group members cannot read a file, but you still can.
+
+
+### Removing files
+
+The standard command to remove files is `rm file` but this is IRREVERSIBLE so should be used with caution. The `trash-cli` [program](https://github.com/andreafrancia/trash-cli) is installed for 'recycle bin' funcionality, but I recommend version control as well (see next).
+
+~~~
+trash-put <file or directory>
+~~~
+
+and 
+
+~~~
+restore-trash <file or directory>
+~~~
+
+to restore a file from your trash.
+
+
 
 ## Version control
 
-[git](http://git-scm.com/) should be used extensively, especially on files in `src` and `R` directories
-
-
-## Running a job
-
-To run a script, use the command
-
-~~~
-nohup nice -n 19 Rscript script.r &
-~~~
-
-where the `nohup` command specifies that your job will be run without hangups (if your terminal becomes disconnected) and `nice` specifies low priority to avoid swamping system resources, and the `&` means that the job runs in the background so you can continue working in the terminal. Replace `Rscript` with `bash` for a shell script, or `python` fore a python script, etc...
-
-The output of the script will be concatenated to the file nohup.out in the working directory.
-
-Note that while the `nice` command will help maintain system resources, the antlab system has only 4 cores, so only 3 long-term jobs can be run simultaneously. Before scheduling a job, check processor usage by typing in the command line:
-
-~~~
-top -n 3
-~~~  
-
-You will see the list of commands, updated every 3 seconds,  sorted by their current CPU usage. The long running jobs will be at the very top consuming >85% of CPU time (3d column.) Only 3 jobs consuming >85% of CPU can be run simultaneously. You can also check memory usage by hitting `Shift-f` and selecting `n` then press enter. The active processes will be ordered by memory usage and you can see what percent is still available.
-
-To kill a job that is running, use 
-
-~~~
-kill -9 PID
-~~~
-
-where PID is the process ID listed from the `top` command. If you have a job running in the background (e.g. with `&` at the end of the line) you can use:
-
-~~~
-kill $!
-~~~
-
-which kills the last process executed in the background.
+[git](http://git-scm.com/) should be used extensively, especially on files in `src` and `R` directories. More info coming...
 
 
 ## Software installation
@@ -101,13 +179,15 @@ so that they are on the $PATH and system-wide accessible. See [for more informat
 chmod ug+x <file>
 ~~~
 
-
-
 Software can be installed in home directory for personal use at your own risk.
+
+
 
 ## System maintenance
 
 System and software updates will be performed the first Monday of every month, so if you are going to schedule long-running jobs around this time let me know if advance.
+
+
 
 ## References
 
