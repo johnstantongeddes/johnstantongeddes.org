@@ -3,7 +3,7 @@
 ## Script modified from https://github.com/cboettig/labnotebook/blob/master/publish.sh 
 
 ## Compile the site
-jekyll
+jekyll build
 
 ## Copy site to repository for github hosting
 git add -A
@@ -13,6 +13,6 @@ git push origin master
 echo "Site updated on Github server"
 
 ## Send site to Amazon S3 for web hosting
-s3cmd --delete-removed sync _site/ s3://johnstantongeddes.org
+s3cmd sync _site/ s3://johnstantongeddes.org
 echo "Site updated on Amazon S3"
 
