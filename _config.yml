@@ -15,6 +15,9 @@ baseurl :
 ## markdown parser
 markdown : pandoc
 pandoc:
+  format: html5
   extensions: 
     - smart
     - mathjax
+#    - csl: '
+#    - bibliography: 'references.bib'

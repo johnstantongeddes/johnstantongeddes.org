@@ -5,16 +5,15 @@ categories:
 title: Finding Aphaenogaster
 tags:
   - Aphaenogaster
-root: ../../../../
 ---
 
 Went out to [Centennial Woods](http://www.uvm.edu/~envprog/?Page=naturalareas/centennial/default.html) today with Andrew and Mike, and after about 30 minutes of searching found an Aphaenogaster colony! In exactly the conditions Andrew described - rotting log that was slightly moist. 
 
-![Aphaenogaster in the wild!]({{ page.root }}images/20130508_aphaenogaster_centennial_woods.jpg "Aphaenogaster!")
+![Aphaenogaster in the wild!]({{ site.url }}/assets/img/20130508_aphaenogaster_centennial_woods.jpg "Aphaenogaster!")
 
 As we're about two inches behind normal rainfall levels in VT at this time of year, conditions were rather dry and Andrew thinks this may be why we were only able to find one colony (though Nick mentioned that Centennial Woods never had many Aphaenogaster colonies). 
 
-![Andrew and Mike collecting Aphaenogaster in Centennial Woods]({{ page.root }}images/20130508_144155_aphaenogaster_collecting.png "Aphaenogaster collecting")
+![Andrew and Mike collecting Aphaenogaster in Centennial Woods]({{ site.url }}/assets/img/20130508_144155_aphaenogaster_collecting.png "Aphaenogaster collecting")
 
 
 ## Meeting

@@ -7,7 +7,6 @@ tags:
   - Aphaenogaster
   - sequencing
   - Illumina
-root: ../../../../
 ---
 
 Update from Minnesota BMGC with RNA QC report and Agilent profiles for the 24 Aphaenogaster RNA samples submitted for Illumina NGS project 'Stanton-Geddes\_Project\_001'
