@@ -1,6 +1,6 @@
 ---
 layout: posts
-category: ApTranscriptome 
+categories: ApTranscriptome
 title: Week Notes 9-13 September
 tags:
   - Aphaenogaster

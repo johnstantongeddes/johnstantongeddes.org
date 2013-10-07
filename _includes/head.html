@@ -2,11 +2,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title> {% if page.title %} {{ page.title }} | {% endif %} John Stanton-Geddes </title>
 
-        <!-- TODO: make sure bootstrap.min.css points to BootTheme generated file -->
-        {% capture root %}{% if page.root %}{{ page.root }}{% else %}{{ post.root }}{% endif %}{%endcapture%}
-
 	<!-- <script type="text/javascript" src="{{ root }}js/jquery-min.js" /> 
 	-->
-	<link rel="stylesheet" type="text/css" href="{{ root }}assets/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="{{ root }}assets/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/main.css" />
 </head>
