@@ -1,7 +1,7 @@
 ---
 layout: posts
 categories: ApTranscriptome
-title: Tuesday 8 October
+title: Transcriptome simulation notes
 tags:
   - transcriptome
   - cufflinks
