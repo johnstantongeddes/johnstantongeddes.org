@@ -1,7 +1,7 @@
 ---
 layout: posts
 categories: ApTranscriptome
-title: de novo gene expression mapping works!
+title: Mapping reads to de novo assembly
 tags:
   - transcriptome
   - TPM
@@ -24,16 +24,16 @@ SPA software available [here](http://genetics.cs.ucla.edu/spa/)
 
 ### Transcriptome
 
-Finished [yesterday]({% post_url 2013-08-23-transcriptome-simulation-2 %}) successfully mapping reads to known transcripts and recovering simulated expression levels.
+[Yesterday]({% post_url 2013-08-23-transcriptome-simulation-2 %}) successfully mapped reads to known transcripts and recovering simulated expression levels, but mapping reads to oases assembled transcripts failed (all zero counts).
 
-Had to learn some BioConductor to work with fasta sequences
+Had to learn some Bioconductor to work with fasta sequences
 
-   library(Biostrings)
-   fasta <- readDNAStringSet("file.fasta") # read fasta file
-   names(fasta) # gives names of sequences
-   width(fasta) # gives sequence length
-   substring(fasta[1]), from=1, to=10) # shows substring of sequence
-   writeXStringSet(fasta[1], file="out.fa", append=TRUE) # writes fasta sequence out
+    library(Biostrings)
+    fasta <- readDNAStringSet("file.fasta") # read fasta file
+    names(fasta) # gives names of sequences
+    width(fasta) # gives sequence length
+    substring(fasta[1]), from=1, to=10) # shows substring of sequence
+    writeXStringSet(fasta[1], file="out.fa", append=TRUE) # writes fasta sequence out
 
  
 AHA! After spending the day working with BioConductor to reduce the oases transcripts to the single best match to the 'known' (a worthwhile excercise for evaluating quality of assembly, but worthless when working with real 'unknown' data) I found that the problem with mapping was that I had skipped steps to make BAM files for the oases transcripts! When I fixed this, reads mapped to transcripts:
