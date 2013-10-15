@@ -3,16 +3,20 @@ layout: pages
 title: Lab notebook
 ---
 
-<div>
-<p> Welcome to my open science lab notebook. For an introduction, acknowledgements and technical details, see my <a href="http://johnstantongeddes.org/open%20science/2013/03/13/first-post.html"> first post</a>. Updates to my workflow after 3 months of use are <a href="http://johnstantongeddes.org/open%20science/2013/07/12/update-to-open-notebook.html"> here</a>. </p>
+    <div class="container"> 
+    
+    	<h2> Lab notebook </h2>
+    
+		<p> Welcome to my open science lab notebook. For an introduction, acknowledgements and technical details, see my <a href="http://johnstantongeddes.org/open%20science/2013/03/13/first-post.html"> first post</a>. Updates to my workflow after 3 months of use are <a href="http://johnstantongeddes.org/open%20science/2013/07/12/update-to-open-notebook.html"> here</a>. </p>
 
-<p> <i>Caveat emptor</i>. Please keep in mind that these are rough lab notes recorded for reproducibility and my own reference. They likely contain mistakes, which are solely mine. If, perchance, you find this information useful or interesting, drop me a line!</p>
+		<p> <i>Caveat emptor</i>. Please keep in mind that these are rough lab notes recorded for reproducibility and my own reference. They likely contain mistakes, which are solely mine. If, perchance, you find this information useful or interesting, drop me a line!</p>
 
-<ul class="entries">
-	{% for post in site.posts %}
-	<li>
-		{{ post.date | date: "%d %B %Y" }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-	</li>
-	{% endfor %}
-</ul>
-</div>
+		<ul class="entries">
+			{% for post in site.posts %}
+			<li>
+				{{ post.date | date: "%d %B %Y" }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div> <!-- end container -->
+	
