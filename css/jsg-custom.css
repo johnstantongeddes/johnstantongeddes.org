@@ -4,4 +4,10 @@ body {
   background-image: url('http://johnstantongeddes.org/assets/img/natural_paper/natural_paper.png');
   background-repeat: repeat; 
 }
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+     color: white;
+}
+
+h2 {color: #216b15; }
 
