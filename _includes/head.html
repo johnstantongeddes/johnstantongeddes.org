@@ -1,12 +1,16 @@
-<head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title> {% if page.title %} {{ page.title }} | {% endif %} John Stanton-Geddes </title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="John Stanton-Geddes">
+    <link rel="shortcut icon" href="favicon.png">
 
-        <!-- TODO: make sure bootstrap.min.css points to BootTheme generated file -->
-        {% capture root %}{% if page.root %}{{ page.root }}{% else %}{{ post.root }}{% endif %}{%endcapture%}
+    <title> {% if page.title %} {{ page.title }} | {% endif %} John Stanton-Geddes </title>
 
-	<!-- <script type="text/javascript" src="{{ root }}js/jquery-min.js" /> 
-	-->
-	<link rel="stylesheet" type="text/css" href="{{ root }}assets/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="{{ root }}assets/css/main.css" />
-</head>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ site.url }}/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ site.url }}/css/jsg-custom.css" rel="stylesheet">
+
+  </head>

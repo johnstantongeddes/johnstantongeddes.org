@@ -1,33 +1,50 @@
 ---
 layout: html5
-root: "../../../../"
 ---
 
-<div class="navbar navbar-inverse navbar-static-top">
-            <div class="navbar-inner">
-                <a class="brand" href="{{ page.root }}index.html">John Stanton-Geddes</a>
-                <ul class="nav">
-                    <li>
-                        <a href="{{ page.root }}categories.html">Categories</a>
-                    </li>
-                    <li>
-                        <a href="{{ page.root }}tags.html">Tags</a>
-                    </li>                  
-                </ul>
-</div>
+<body>
+	{% include navbar-posts.html %}
 
-<div class="span3">
-	</br>
-	<img src="{{ page.root }}assets/img/glyphicons_045_calendar.png" /> {{ page.date | date: "%d %B %Y" }}	
-        </br>  
-	</br> 
-	<img src="{{ page.root }}assets/img/glyphicons_066_tags.png" /> <p> {{ page.tags | array_to_sentence_string }} </p>
-</div>
+    <div class="container"> 
+		<div class="row">
+		  	
+		  	<div class="col-md-3">
+				<br />
+				
+				<span class="glyphicon glyphicon-calendar"></span> <p> {{ page.date | date: "%d %B %Y" }} </p>
+        		
+        		<br />
+        		  
+				<span class="glyphicon glyphicon-tags"></span> <p> {{ page.tags | array_to_sentence_string }} </p>
+		  	
+		  		<!-- Next/previous post navigation -->
+		  	  	{% if page.next %}
+  				<span class="glyphicon glyphicon-circle-arrow-left"></span> 
+  				<a href='{{ page.next.url }}'>Next post</a>
+  				{% else %}
+    			</p>
+    			{% endif %}
+    			{% if page.previous %}
+    			<span class="glyphicon glyphicon-circle-arrow-right"></span> 
+  				<a href='{{ page.previous.url }}'>Previous post</a>
+  				{% endif %}
+  				
+		  	
+		  	</div> <!-- end left column -->
 
-<div class="span9">
-	<h1> {{ page.title }} </h1>
+			<div class="col-md-9">
+	  				<h1> {{ page.title }} </h1>
+	  				
+					{{ content }}
+					
+  			</div> <!-- end right column -->
+		</div> <!-- end row -->
+	</div> <!-- /container -->
 
-	{{ content }}
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ site.url }}/js/jquery.js"></script>
+    <script src="{{ site.url }}/js/bootstrap.min.js"></script>       
 
-</div>
-
+</body>
