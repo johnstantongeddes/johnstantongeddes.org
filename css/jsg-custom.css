@@ -9,5 +9,17 @@ body {
      color: white;
 }
 
-h2 {color: #216b15; }
+.navbar-default .navbar-nav:hover,
+.navbar-default .navbar-nav:focus {
+     color: white;
+}
 
+
+h2 {color: #216b15; }
+h3 {color: #216b15; }
+h4 {color: #216b15; }
+h5 {color: #216b15; }
+
+
+<!-- offset anchor to account for fixed header -->
+a.anchor{display: block; position: relative; top: -250px; visibility: hidden;}
