@@ -1,7 +1,7 @@
 ---
 layout: posts
 categories: ApTranscriptome
-title: Tuesday notes
+title: Wednesday notes
 tags:
   - teaching
   - gene expression
@@ -84,8 +84,7 @@ Could be because of lots of multiple alignment to the assembled transcripts vs t
 
 For tophat mapped reads to assembled transcripts:
 
-> Left reads:
->               Input:   1488635
+~~~
 >              Mapped:    288471 (19.4% of input)
 >            of these:    183776 (63.7%) have multiple alignments (0 have >20)
 > Right reads:
@@ -98,9 +97,11 @@ For tophat mapped reads to assembled transcripts:
 >     of these:    110648 (59.4%) have multiple alignments
 >          and:         2 ( 0.0%) are discordant alignments
 > 12.5% concordant pair alignment rate.
+~~~
 
 compared to tophat mapped reads to known transcripts
 
+~~~
 > Left reads:
 >                Input:   1488635
 >              Mapped:    978717 (65.7% of input)
@@ -115,10 +116,15 @@ compared to tophat mapped reads to known transcripts
 >     of these:     62730 ( 6.5%) have multiple alignments
 >          and:         3 ( 0.0%) are discordant alignments
 > 64.8% concordant pair alignment rate.
+~~~
 
 But, the correlation of expression counts from cufflinks mapped to known transcripts is beautiful! r=0.83 for 97 of 100 transcripts!
 
 ![Correlation between known and Tophat-cufflinks mapped reads for gene expression data]({{ site.url }}/assets/img/corr-known-vs-assembled-expression-cufflinks.pdf)
+
+But, the correlation of expression counts from cufflinks mapped to known transcripts is beautiful! r=0.83 for 97 of 100 transcripts!
+
+![Correlation between known and Tophat-cufflinks mapped reads for gene expression data]({{ site.url }}/assets/img/corr-known-vs-assembled-expression-cufflinks.png)
 
 Similar problem with BWA...what to do with *real* data where I can't infer incorrect isoforms?
 
