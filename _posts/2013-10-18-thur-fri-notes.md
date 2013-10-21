@@ -4,7 +4,7 @@ categories: ApTranscriptome
 title: Thursday - Friday notes
 tags:
   - gene expression
-  - CD-HIt
+  - CD-HIT
 ---
 
 ### ApTranscriptome
