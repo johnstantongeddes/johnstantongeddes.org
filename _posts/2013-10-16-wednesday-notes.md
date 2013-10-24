@@ -120,7 +120,13 @@ compared to tophat mapped reads to known transcripts
 
 But, the correlation of expression counts from cufflinks mapped to known transcripts is beautiful! r=0.83 for 97 of 100 transcripts!
 
-![Correlation between known and Tophat-cufflinks mapped reads for gene expression data]({{ site.url }}/assets/img/corr-known-vs-assembled-expression-cufflinks.jpg)
+<p align="center">
+  <b>Known vs assembled transcript expression</b>
+</p>
+
+<p align="center">
+  <img src="{{ site.url }}/assets/img/corr-known-vs-assembled-expression-cufflinks.jpg" title="Known vs assembled expression correlation" alt="correlation plot" width=300 height=300>
+</p>
 
 Similar problem with BWA...what to do with *real* data where I can't infer incorrect isoforms?
 
