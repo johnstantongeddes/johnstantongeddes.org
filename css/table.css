@@ -1,1 +1,7 @@
- table { border: 2px solid black; }
+table { border: 2px solid black; }
+
+table { border: 2px solid black; border-collapse: collapse; }
+th { border-bottom: 2px solid black; }
+tr.odd { background-color: gray; color: white; }
+td {border-right: 1px solid black;}
+caption { font-weight: bold;  margin: 1em; }
