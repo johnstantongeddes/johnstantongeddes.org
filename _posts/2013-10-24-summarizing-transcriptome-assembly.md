@@ -32,11 +32,9 @@ Project notes:
 4) Average quality scores are well above Q30 for both R1 and R2.
 5) The libraries were pooled and size selected to generate inserts of approximately 200bp.
 
-Figure 1: Distribution of reads among samples. *A22* and *Ar* samples in separate lanes.
 
-<!-- ![Distribution of reads]({{ site.url }}/assets/img/ApTranscriptome-Illumina-read-distribution.jpg) -->
-
-<img src="{{ site.url }}/assets/img/ApTranscriptome-Illumina-read-distribution.jpg" alt="Distribution of reads" width = 500 height = 200/><figcaption>Distribution of reads</figcaption>
+<img src="{{ site.url }}/assets/img/ApTranscriptome-Illumina-read-distribution.jpg" alt="Distribution of reads" width = 500 height = 200/><figcaption>Figure 1: Distribution of reads among samples. *A22* and *Ar* samples in separate lanes.
+</figcaption>
 
 
 ## General notes on assembly pipeline ##
@@ -90,7 +88,7 @@ N90 Length              410
 
 assembly stat            result
 ---------------------  ------------
-Total Trimmed Contigs    9,0612
+Total Trimmed Contigs    90,612
 Total Length             86,485,229
 Min contig size          119
 Median contig size       586
@@ -124,11 +122,7 @@ Final results were encouraging, with 58% and reads recovered using all data and 
 
 I evaluated gene expression using two standard approaches (cufflinks and BWA) as well as a new mapping-free alignment approach (sailfish). I found all three to perform very well with greater than 90% correlation to the known simulated expression levels. 
 
-*Correlation of gene expression values estimated by cufflinks to known simulated values.*
-
-<!-- ![paired sequencing]({{ site.url }}/assets/img/corr-known-vs-assembled-expression-cufflinks.jpg) -->
-
-<img src="{{ site.url }}/assets/img/corr-known-vs-assembled-expression-cufflinks.jpg" alt="Distribution of reads" width = 400 height = 400/>
+<img src="{{ site.url }}/assets/img/corr-known-vs-assembled-expression-cufflinks.jpg" alt="Distribution of reads" width = 400 height = 400/><figcaption>Figure 2: Correlation of gene expression values estimated by cufflinks to known simulated values</figcaption>
 
 
 ## Transcriptome Assembly ##
@@ -145,9 +139,7 @@ In total, about 4% of bases filtered due to quality.
 
 As the mRNA library was size selected to an insert size of 200bp and 100bp sequencing was performed, overlap in sequencing is likely to occur for any fragments shorter than 200bp with full length sequencing. To take advantage of this, I used the program [FLASH](http://ccb.jhu.edu/software/FLASH/) (Magoc and Salzberg 2011).  
 
-Figure 2: Diagram from [Illumina](http://www.illumina.com/technology/paired_end_sequencing_assay.ilmn) to show how paired-end sequencing can result in overlap of sequencing for insert sizes less than 2 times the read length.
-
-<img src="{{ site.url }}/assets/img/paired-end_sequencing.jpg" alt="paired-end sequencing" width = 400 height = 400/>
+<img src="{{ site.url }}/assets/img/paired-end_sequencing.jpg" alt="paired-end sequencing" width = 400 height = 400/><figcaption>Diagram from [Illumina](http://www.illumina.com/technology/paired_end_sequencing_assay.ilmn) to show how paired-end sequencing can result in overlap of sequencing for insert sizes less than 2 times the read length.</figcaption>
 
 
 ### Digital normalization ###
@@ -219,9 +211,7 @@ N50 Contig               9,743
 N50 Length               1,801
 N90 Contig               39,904
 N90 Length               318
-
-
-
+--------------------------------------
 
 ## Gene expression ##
 
@@ -237,11 +227,7 @@ and retained transcripts that had a significant linear or quadratic term at the 
 
 11,274 Of the 73,943 transcripts in the assembly (15%) had either a significant linear or quadratic term at P<0.05 (Figure 3).
 
-Figure 3. Thermal reactionome for 11,274 transcripts with significant linear or quadratic terms.
-
-<img src="{{ site.url }}/assets/img/A22-thermal-reactionome.png" alt="Distribution of reads" width = 400 height = 400/>
-
-<!-- ![thermal reactionome]({{ site.url }}/assets/img/A22-thermal-reactionome.pdf) -->
+<img src="{{ site.url }}/assets/img/A22-thermal-reactionome.png" alt="thermal reactionome" width = 400 height = 400/><figcaption>Figure 3: Thermal reactionome for 11,274 transcripts with significant linear or quadratic terms.</figcaption>
 
 ### References
 
