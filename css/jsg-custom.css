@@ -24,3 +24,25 @@ h5 {color: #216b15; }
 
 <!-- offset anchor to account for fixed header -->
 a.anchor{display: block; position: relative; top: -250px; visibility: hidden;}
+
+<!-- Table properties: add border and alternate grey white rows -->
+table { border: 2px solid black; }
+
+table { border: 2px solid black; border-collapse: collapse; }
+th { border-bottom: 2px solid black; }
+tr.odd { background-color: gray; color: white; }
+td {border-right: 1px solid black;}
+caption { font-weight: bold;  margin: 1em; }
+
+
+<!-- Figure properties: borders and align figcaption -->
+
+/* Styles for dotted border */
+figure{/* Allows to fit figcaption to figure horizontally */display:table; width: 2px; 
+margin-bottom:15px;border:1px dashed #ddd}
+/* Figcaption Style */
+figcaption{/* Allows to fit figcaption to figure vertically */display: run-in;
+/* Caption position: top/right/bottom/left */caption-side:bottom;
+background-color:grey;color:white;margin-top:5px;text-indent:1em}
+
+
