@@ -8,7 +8,7 @@ tags:
   - protocols
 ---
 
-Protocol to extract high-molecular weight DNA using [Qiagen Genomic-tip Midi Kit](http://www.qiagen.com/products/catalog/sample-technologies/dna-sample-technologies/genomic-dna/blood-and-cell-culture-dna-midi-kit). Note that using the "Tissue" prep with only Buffer G2 for homogenization and lysis [did not work](({{ post_url 2013-11-08-genomic-tip-success }})) and a cell lysis buffer (I use the [Buffer ATL](http://www.qiagen.com/products/catalog/lab-essentials-and-accessories/buffer-atl) supplied with the DNeasy kits) is necessary. 
+Protocol to extract high-molecular weight DNA using [Qiagen Genomic-tip Midi Kit](http://www.qiagen.com/products/catalog/sample-technologies/dna-sample-technologies/genomic-dna/blood-and-cell-culture-dna-midi-kit). Note that using the "Tissue" prep with only Buffer G2 for homogenization and lysis [did not work]({% post_url 2013-11-07-genomic-tip-success %}) and a cell lysis buffer (I use the [Buffer ATL](http://www.qiagen.com/products/catalog/lab-essentials-and-accessories/buffer-atl) supplied with the DNeasy kits) is necessary. 
 
 Tested for *Pogonomyrmex* and *Aphaenogaster* ants. 
 

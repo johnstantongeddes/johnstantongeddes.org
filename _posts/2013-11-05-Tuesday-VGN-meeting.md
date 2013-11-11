@@ -1,7 +1,7 @@
 ---
 layout: posts
 categories: ApTranscriptome
-title: Monday notes
+title: Meeting with VGN notes
 tags:
   - Trinity
   - Trinotate
@@ -22,7 +22,7 @@ Mahesh ran Trinity to assemble transcriptome with all reads from both ant coloni
 Two patterns of note:
 
 1) Gene expression groups primarily by ant colony (Ar and A22) indicating that differences among colonies are large enough that a unique transcript is assembly for each homolog. We are assuming that these colonies are fairly closely related and do not want independent contigs of each gene for each colony. We want a single transcriptome with one transcript per gene. Thus, in the figure we should a primary effect of temperature on gene expression, with less of an effect due to colony. 
-2) Temperature samples (the -00 to -38 suffix) group together *with the exception of Ar-07 and A22-07* (circled in figure) that are found in opposite group. Parsimonius explanation for this pattern is that samples were mislabeled before sequencing. Damn. This also explains the global "dip" in expression that we noted in initial read-mapping [last week]({{ post_url 2013-10-24-summarizing-transcriptome-assembly }}) as I generated the transcriptome with only A22 reads, and trying to map Ar reads to this assembly would result in reduced mapping and thus expression levels. 
+2) Temperature samples (the -00 to -38 suffix) group together *with the exception of Ar-07 and A22-07* (circled in figure) that are found in opposite group. Parsimonius explanation for this pattern is that samples were mislabeled before sequencing. Damn. This also explains the global "dip" in expression that we noted in initial read-mapping [last week]({% post_url 2013-10-24-summarizing-transcriptome-assembly %}) as I generated the transcriptome with only A22 reads, and trying to map Ar reads to this assembly would result in reduced mapping and thus expression levels. 
 
 Suggested solutions to these issues:
 

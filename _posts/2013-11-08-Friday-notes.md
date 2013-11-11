@@ -13,7 +13,7 @@ Sara suggested that I wasn't observing a pellet in the 15ml glass centrifuge tub
 
 Key point of the last week of lab work: Buffer ATL needed for cell lysis during homogenization of ant tissue for DNA purification! The Buffer G2 provided in the Genomic-tip kit *is not* and adequate substitute.
 
-Drafted Genomic-tip DNA extraction protocol for ants separately in [next post]({{ post_url 2013-11-08-Genomic-tip-DNA-extraction-protocol }})
+Drafted Genomic-tip DNA extraction protocol for ants separately in [next post]({% post_url 2013-11-08-Genomic-tip-DNA-extraction-protocol %})
 
 ### R
 

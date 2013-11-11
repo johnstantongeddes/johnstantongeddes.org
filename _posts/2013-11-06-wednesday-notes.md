@@ -10,7 +10,7 @@ tags:
 
 ### ApTranscriptome
 
-Following up on yesterday's [conversation]({{ post_url 2013-11-06-tuesday-vgn-meeting }}):
+Following up on yesterday's [conversation]({% post_url 2013-11-05-Tuesday-VGN-meeting %}):
 
 uclust is the same as CD-HIT but faster because it doesn't search all transcripts, but stops when probability of a match declines below threshold.
 
