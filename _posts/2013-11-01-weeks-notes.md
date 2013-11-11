@@ -108,7 +108,21 @@ Total mass DNA for 100ul MB2 = 600 ng. If I need 10ug for PacBio, at this level 
 
 ## 2013-11-01
 
-Organization day...
+**Climate-cascade meeting**
+
+Read Jeremy's *Genetics* manuscript
+
+**Ecolunch**
+
+Alison Brody
+
+**Organization**
+
+things to do...
+
+**Sociobiology**
+
+covered Sara's class while she was at EcoGenomics conference
 
 Ecolunch - Alison Brody
 

@@ -16,8 +16,7 @@ Dell T7600 workstation running Ubuntu 12.04
 * Memory: 64GB DDR3 RDIMM 1600 ECC, 8x8GB
 * Hard drive: 4x3TB 3.5inch 7200 SATA 6Gb/s in RAID 6 for redundancy
 
-[Note that regardless of Dell stating that the system could run linux](http://xkcd.com/349/), no linux drivers were available for the installed PERC H310 SATA/SAS RAID controller. [Pine Computers](http://pinecomputers.net/) replaced the PERC card with an Adaptec AAC-RAID and were then able to install Ubuntu. 
-
+[Note that regardless of Dell stating that the system could run linux](http://i.dell.com/sites/doccontent/shared-content/data-sheets/en/Documents/Dell-Precision-T7600-Spec-Sheet-tab.pdf), no linux drivers were available for the installed PERC H310 SATA/SAS RAID controller. [Pine Computers](http://pinecomputers.net/) replaced the PERC card with an Adaptec AAC-RAID and were then able to install Ubuntu. 
 
 
 ## Running a job
