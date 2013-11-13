@@ -41,7 +41,7 @@ caption { font-weight: bold;  margin: 1em; }
 figure{/* Allows to fit figcaption to figure horizontally */display:table; width: 2px; 
 margin-bottom:15px;border:1px dashed #ddd}
 /* Figcaption Style */
-figcaption{/* Allows to fit figcaption to figure vertically */display: run-in;
+figcaption{/* Allows to fit figcaption to figure vertically */display: run-in; width: 300px;
 /* Caption position: top/right/bottom/left */caption-side:bottom;
 background-color:grey;color:white;margin-top:5px;text-indent:1em}
 

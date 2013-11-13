@@ -1,7 +1,7 @@
 ---
 layout: posts
 categories: ApGenome
-title: Tuesday notes
+title: Wednesday notes
 tags:
   - Genomic-tip
   - DNA extraction
@@ -10,73 +10,49 @@ tags:
 
 ### ApGenome
 
-Sample had substantial amount of precipitate in bottom of tube after overnight incubation. 
+Aphaenogaster sample Genomic-tip DNA extraction day 2.
 
-* 100ul aliquot of sample
-* Warm 5 ml Buffer QF to 50C to increase elution
-* Equilibrated Genomic-tip with 4 ml Buffer QBT
-* Vortexed sample and added to Genomic-tip
-  - only about half went through before flow stopped.
-  - pulled off remaining sample, transferred to 1.5 ml eppendorfs and centrifuged for 1 min. even more white precipitate in bottom of tubes.
-  - decided to start new Genomic-tip with remaining sample (supernatant after centrifuging). *still* stopped up with centrifuged sample (only about 3ml). pulled the sample that was 'stuck' as aliquot A1-A. Proceed.
-* Wash twice with 7.5 ml Buffer QC
-* Elute into glass centrifuge tube with 5 ml Buffer QBT warmed to 50C
-* Add 3.5 ml isopropanol. Mix.
-  - *very* clear DNA precipitation!! *lots* in the first tube and still plenty visible in second
-* Centrifuge 15 min 10k G at 4C. Pour off supernatant.
-* Add 2 ml cold 70% ethanol. Centrifuge 10 min 10K G at 4C. Pour off supernatant.
-* Allow to completely dry. Re-hydrate DNA in 500ul Buffer AE from DNeasy kit per recommendation from Delaware Sequencing Center. 
+Nandrop results terrible!!! No idea why - saw beautiful strands of DNA at isopropanol precipitation stage and followed exact same protocol as previous extraction with Pogo after that.
 
-NOTE: update protocol to *not* combine homogenized samples for incubation with Proteinase K.
-Instead, transfer supernatant to new 1.5ml centrifuge tube, add 1 ml Buffer G2 to tube with 50 ul Proteinase K and incubate tubes overnight in heat block. 
-Would be possible to use 15 ml conical if large centrifuge convenient.
-After incubation, centrifuge tubes. Pool supernatant to apply to Genomic-tip.
-Need to add RNAse A incubation, 15 min at 37C, prior to applying sample to Genomic-tip. 
+1) Re-precipitated sample (500 ul) with 750 ul 70% EtOH. Centrifuged 10 min top speed. Air-dry. Re-hydrate in 200 ul Buffer AE and Nanodrop in morning.
+2) I had saved Genomic-tip for this event. Added 1 ml Buffer QF. Precipitated in EtOH and centrifuged. Air-dry. Re-hydrate in 200 ul Buffer AE and Nanodrop in morning.
 
-Nanodrop results. Pog20131111-a is the second Genomic-tip with sample that didn't flow-through first tip
+### Website
 
-Sample              ng/ul     260:280
-----------------  --------   ----------
-Pog20131111          55.9       1.48
-Pog20131111-a        60.10      1.55
---------------------------------------
+While setting up jekyll for static website on xubuntu laptop, decided to write quick notes on install process:
 
-Awesome!!! High mass and decent quality DNA. Interesting that the second sample had slighly higher mass and quality, suggesting that I overloaded the Genomic-tip. May want to split and dilute future samples.
+Install jekyll, requires an up-to-date version of ruby
+    
+    sudo apt-get install ruby1.9.1-dev
+    sudo gem install jekyll
+    # Need `pandoc-ruby` gem for pandoc compatability
+    sudo gem install pandoc-ruby
 
+That's it! 
 
-### Teaching
+Clone the website and build or serve locally!
 
-Covering BCOR 11 and Population Genetics classes for Heather on Friday and Monday. Discussed topics to cover. 
+   git clone https://github.com/johnstantongeddes/johnstantongeddes.org.git
+   jekyll serve
+    
+Of course, this is for an install of my own website...a new website would require some more steps.
 
-**BCOR**
-
-*Friday*
-
-* Review transcript to translation (Campbell Ch. 17) - the 'Central Dogma'
-* Post-translational modification (Campbell Ch. 17)
-  - translated gene is a polypeptide, needs to be modified to become functional
-  - folding (paper airplane example)
-  - chaperones
-  - signaling peptides
-* Kuru video - prion disease
-  - discuss cause (genetic?) 
-  - epidemiology
-* Begin Chapter 18: gene expression
-  - what is a gene?
-
-*Monday*
-
-* Gene expression (Campbell Ch. 18) 
-  - lac operon
-  - trp operon
-* Summary of my research on current methods to examine gene expression in non-model systems
+Added javascript to base html layout to [allow mathjax in posts](http://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll).
 
 ### Reading
 
-Bartomeus et al. (2013) Biodiversity ensures plant-pollinator phenological synchrony against climate change. Ecology Letters 16: 1331-1338.
+De Mita, S., Thuillet, A.-C., Gay, L., Ahmadi, N., Manel, S., Ronfort, J. & Vigouroux, Y. (2013). Detecting selection along environmental gradients: analysis of eight methods and their effectiveness for outbreeding and selfing populations. [Molecular Ecology, 22, 1383–1399](http://onlinelibrary.wiley.com/doi/10.1111/mec.12182/abstract).
 
-  - Plant-Insect Interactions reading group discussion
-  - biodiversity insurance - many species buffer climate change effects
-  - temporal partitioning and overlap of common pollinators on apple trees
-  - 46 years of data tracking phenology of apple and pollinators
-  - apple flowering and pollinator appearance are in synchrony, with mean advance of 2 days
+  - challenging to detect loci under selection using molecular data
+  - authors evaluate 3 correlation-based and 5 differentiation-based methods using simulated data with different sampling schemes and migration patterns
+  - all methods perform well when selection is strong
+  - logistic-regression based methods haver higher false-positive rates
+  - correlation-based methods have greater power when selection is weak
+  - CWDRP (Coop et al 2010 Genetics) method has best power when selection is weak with low false positive rate
+  - deviation from island model (e.g. isolation by distance) increases false positive rate for logistic regression based methods
+  - selfing reduces power for differentiation-based methods and increases false positive rate for logistic-regression methods
+  - sampling more than one individual per population increases false positives in logistic regression. Differentiation-based methods (especially FLK) improved with more samples per pop
+  - CWDRP method computationally-slow and requires population-level frequency data
+  - differentiation-based methods require a large number of populations (48) and 8-10 samples per pop
+  - more thoughts on the implications of this paper for our Medicago work in [next post](% post_url 2013-11-13-methods-to-detect-selection %)
+
