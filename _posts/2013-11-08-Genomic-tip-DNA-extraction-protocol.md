@@ -29,7 +29,7 @@ Protocol below is for 20-30 ants in 10 screw cap tubes. Modify for more or fewer
 **DNA purification**
 
 8) Centrifuge tubes 2 min at 10k rpm. Transfer supernatant to a *single* new 15 ml conical tube leaving behind precipitate.
-9) Add 100 ul RNAse A. Incubate for 15 min at 37C.
+9) Add 1 ul RNAse A. Incubate for 15 min at 37C.
 
 Following standard Qiagen Genomic-tip protocol.
 
