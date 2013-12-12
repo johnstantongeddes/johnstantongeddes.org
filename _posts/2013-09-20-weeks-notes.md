@@ -101,10 +101,13 @@ Problem with oases_pipeline script because does not expand regular expression " 
 
 ### git
 
-Added ssh authentication for climate-cascade on the mason cluster.
+ssh authentication for for github so can `push` commits without requiring login.
 
-First, [generate ssh key and verify](https://help.github.com/articles/generating-ssh-keys)
+1) [Generate ssh key and verify](https://help.github.com/articles/generating-ssh-keys) if doesn't exist already
 
-Second, change git remove origin to: git@github.com:johnstantongeddes/climate-cascade.git
+2) Change git remote origin using this command:
 
+    git remote set-url origin git@github.com:USERNAME/REPO.git
+
+Should be able to push commits without password entry!
 

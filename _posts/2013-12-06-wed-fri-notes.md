@@ -53,7 +53,7 @@ Set up two more extractions with 30 ants each.
 
 `rm` doesn't accept regular expression as an argument. Use [this command](http://superuser.com/questions/392872/delete-files-with-regular-expression) instead
 
-    ls | grep -p "yourstring$" | xargs -d"\n" rm
+    ls | grep -P "yourstring$" | xargs -d"\n" rm
 
 ### ApTranscriptome
 
