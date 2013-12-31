@@ -1,10 +1,12 @@
 ---
 layout: posts
 categories: open science
-title: 2013 Annual Review
+title: 2013 Annual Report
 tags:
-  - review
+  - report
 ---
+
+Brief summary of the tasks and work I accomplished this calendar year. Broady organized along NSF grant proposal criteria.
 
 ## Teaching
 
@@ -38,6 +40,7 @@ tags:
 
 ## Broader Impacts
 
+* Completed [8 reviews]({% post_url 2013-07-10-reviews %}) for 7 different journals.
 * Started [open lab notebook](http://johnstantongeddes.org/labnotebook.html) consisting of 135 entries with a total of 54,407 words since [first entry]({% post_url 2013-03-13-first-post %}).
 * Started [GotelliLab](https://github.com/GotelliLab) github account.
 * Coordinated new Q & A feature for the [Molecular Ecologist blog](http://www.molecularecologist.com/) featuring [Loren Rieseberg, Ruth Shaw and Richard Lenski](http://www.molecularecologist.com/author/johnstantongeddes/).
