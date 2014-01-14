@@ -8,6 +8,13 @@ tags:
   - RNA extraction
 ---
 
+## Thursday Jan 9
+
+### ApTranscriptome
+
+Working on analysis to identify thermally-responsive genes for *combined* expression values. 
+Sent file to Mahesh.
+
 ### ApGxL 
 
 Sent samples from yesterday's RNA extractions for Bioanalyzer analysis to see if low quality is simply low volume, or just bad RNA extraction.
