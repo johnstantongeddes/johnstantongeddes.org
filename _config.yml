@@ -1,6 +1,6 @@
 ## jekyll config options
 title : John Stanton-Geddes
-exclude : [_posts/_private/, assets/figures]
+exclude : [_posts/_private/, assets/figures, _posts/Rmd_cache/]
 
 ## metadata
 author :

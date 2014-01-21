@@ -2,6 +2,17 @@
 
 ## Script modified from https://github.com/cboettig/labnotebook/blob/master/publish.sh 
 
+# Convert all Rmarkdown (Rmd) posts to md
+cd _posts
+for f in *.Rmd
+do 
+    echo "Processing $f to md"
+    knit -n $f # Rmd to md only, no html generated
+    mv $f Rmd_cache/. # move Rmd file so only md file is used by jekyll. Rmd_cache should be 
+                      # excluded in _config.yml
+done
+cd ../
+
 ## Compile the site
 jekyll build
 
