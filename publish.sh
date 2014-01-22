@@ -8,7 +8,7 @@ for f in *.Rmd
 do 
     echo "Processing $f to md"
     knit -n $f # Rmd to md only, no html generated
-    mv $f Rmd_cache/. # move Rmd file so only md file is used by jekyll. Rmd_cache should be 
+    mv $f _Rmd_cache/. # move Rmd file so only md file is used by jekyll. Rmd_cache should be 
                       # excluded in _config.yml
 done
 cd ../
