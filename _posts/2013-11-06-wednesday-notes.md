@@ -1,6 +1,6 @@
 ---
 layout: posts
-categories: ApTranscriptome, ApGenome
+categories: ApTranscriptome ApGenome
 title: Wednesday notes
 tags:
   - cap3

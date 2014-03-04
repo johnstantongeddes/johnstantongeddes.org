@@ -1,6 +1,6 @@
 ---
 layout: posts
-categories: ApThermBe ApTranscriptome
+categories: CCThermBe ApTranscriptome
 title: Tuesday notes
 tags: 
   - Arudino
@@ -10,7 +10,7 @@ tags:
 * Molecular Ecologist Q&A with [Pleuni Pennings](http://www.molecularecologist.com/2014/01/people-behiind-the-science-dr-pleuni-pennings/)
 * meet with Nicole to discuss DNA extractions for ApAdaPt
 
-### ApThermBe
+### CCThermBe
 
 Talked to SparkFun Tech Support. Following recommendations, ordered for Arduino laser-trip camera:
 

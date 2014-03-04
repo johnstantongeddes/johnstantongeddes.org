@@ -15,7 +15,7 @@ tags:
 
 http://stackoverflow.com/questions/4696128/bash-script-determine-if-file-modified
 
-### ApThermBe
+### CCThermBe
 
 Ideas for laser-trip camera [here](http://yourduino.com/sunshop2/index.php?l=product_detail&p=47), [here](http://bildr.org/2012/11/photoresistor-arduino/) and [here](http://www.instructables.com/id/Arduino-Laser-System-Tripwire-Tutorial/)
 

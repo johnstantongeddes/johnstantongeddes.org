@@ -98,7 +98,7 @@ Check Bioanalyzer results - if high quality RIN values after RNAzol, use this st
 
 Otherwise - return to using 3 ants per extraction (instead of 1) as this yielded [good results]({% post_url 2013-04-23-sample_QC_for_Illumina %}) before for transcriptome assembly.
 
-### ApThermBe
+### CCThermBe
 
 Set up first foster colony with about 50 pupae with Grace.
 

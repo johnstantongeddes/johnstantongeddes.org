@@ -1,6 +1,6 @@
 ---
 layout: posts
-categories: ApTranscriptome, ApGenome
+categories: ApTranscriptome ApGenome
 title: Thursday notes
 tags:
   - Genomic-tip

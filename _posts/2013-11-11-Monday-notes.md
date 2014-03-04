@@ -1,6 +1,6 @@
 ---
 layout: posts
-categories: ApGenome, ApTranscriptome, ThermBe
+categories: ApGenome ApTranscriptome CCThermBe
 title: Monday notes
 tags:
   - Genomic-tip
