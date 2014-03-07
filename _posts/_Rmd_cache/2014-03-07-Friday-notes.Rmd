@@ -24,6 +24,10 @@ Testing `integrate()` and [AUC](http://stackoverflow.com/questions/4954507/calcu
 
 Federico pointed out [prinseq](http://prinseq.sourceforge.net/index.html) `r citep("10.1093/bioinformatics/btr026")` for filtering fastq files and [deconseq](http://deconseq.sourceforge.net/index.html) to "automatically detect and efficiently remove sequence contaminations from genomic and metagenomic datasets". Both look useful for future work.
 
+```{r, echo=FALSE, results='asis'}
+bibliography()
+```
+
 
 ### Linux
 
@@ -47,17 +51,19 @@ and filed [issue](https://github.com/cboettig/knitcitations/issues/52) that was 
 
 Gouveia, S.F., Hortal, J., Tejedo, M., Duarte, H., Cassemiro, F.A.S., Navas, C.A. & Diniz-Filho, J.A.F. (2014). Climatic niche at physiological and macroecological scales: the thermal tolerance–geographical range interface and niche dimensionality. Global Ecology and Biogeography, 23, 446–456
 
-    - sent by Aaron Ellison
-    - macrophysiology: "describe general properties of the interface between individual' endurance of environmental conditions and their geographical patterns of distribution of their species"
-       - this description seems to ignore within-species differentiation
-    - CTmax for 47 species of anurans
-    - 'phylogenetic signal representation'
-      - PSR curve at 45° line consistent with neutral evolution
-      - PSR curve above line consistent with accelerated divergence
-      - PSR curve below line implies "stronger phylogenetic signal"
-    - CTMax and macroecological niche accelerated evolutionary rates
-    - Tmax and Tvar slower evolutionary rates
-    - 'upper physiological limits alone may fail to characterize the macroecological (i.e. geographical) climatic boundaries of species' distributions'
-    - authors claim that realized variability is a better descriptor of CTmax than a *single* climatic parameter such as Tmax, but this masks that the differences in the P-values between these comparisons is not large: correlation between CTmax and Tmax (beta = -0.064, P = 0.095); correlation between CTmax and Tvar (beta = -0.079, P = 0.023). 
-    - position in 'hyperdimensional niche space' a better predictor of range limits than CTmax
+  - sent by Aaron Ellison
+  - macrophysiology: "describe general properties of the interface between individual' endurance of environmental conditions and their geographical patterns of distribution of their species"
+     - this description seems to ignore within-species differentiation
+  - CTmax for 47 species of anurans
+  - 'phylogenetic signal representation'
+    - PSR curve at 45° line consistent with neutral evolution
+    - PSR curve above line consistent with accelerated divergence
+    - PSR curve below line implies "stronger phylogenetic signal"
+  - CTMax and macroecological niche accelerated evolutionary rates
+  - Tmax and Tvar slower evolutionary rates
+  - 'upper physiological limits alone may fail to characterize the macroecological (i.e. geographical) climatic boundaries of species' distributions'
+  - authors claim that realized variability is a better descriptor of CTmax than a *single* climatic parameter such as Tmax, but this masks that the differences in the P-values between these comparisons is not large: correlation between CTmax and Tmax (beta = -0.064, P = 0.095); correlation between CTmax and Tvar (beta = -0.079, P = 0.023). 
+  - position in 'hyperdimensional niche space' a better predictor of range limits than CTmax
+
+
 
