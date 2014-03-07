@@ -1,6 +1,6 @@
 ---
 layout: posts
-categories: open science
+category: open science
 title: 2013 Annual Report
 tags:
   - report
