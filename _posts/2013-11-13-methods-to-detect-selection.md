@@ -1,6 +1,6 @@
 ---
 layout: posts
-categories: Ecological Genetics
+category: Ecological Genetics
 title: Thoughts on methods to detect selection along environmental gradients
 tags:
   - selection

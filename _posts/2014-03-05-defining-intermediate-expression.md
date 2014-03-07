@@ -1,7 +1,7 @@
 ---
 layout: posts
 categories: ApTranscriptome
-title: Intermediate-expression: biological interpretation
+title: Intermediate-expression - biological interpretation
 tags: 
   - regression
   - statistical inference

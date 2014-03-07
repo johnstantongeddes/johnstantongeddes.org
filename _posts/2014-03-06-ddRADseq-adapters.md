@@ -1,6 +1,6 @@
 ---
 layout: posts
-categories: ApPopGen ApAdaPt
+categories: protocols
 title: ddRADseq anneal adapters
 tags: 
   - ddRADseq
