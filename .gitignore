@@ -9,6 +9,7 @@ assets/
 *.swp
 *.Rhistory
 .goutput*
+*\#
 
 # Ignore private posts embargoed for future publication
 _posts/_private/
