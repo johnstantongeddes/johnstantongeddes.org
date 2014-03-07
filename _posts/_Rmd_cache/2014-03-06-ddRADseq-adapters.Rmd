@@ -10,7 +10,7 @@ tags:
 
 ```{r, echo=FALSE}
 library(methods)
-suppressMessages(library(knitcitations)
+suppressMessages(library(knitcitations))
 ```
 
 ### ddRADseq
