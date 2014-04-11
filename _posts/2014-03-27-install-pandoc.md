@@ -40,7 +40,8 @@ Due to my frustration and lack of a clear reference online, posted
 
 6. Check pandoc version to confirm installed
 
-   `pandoc --version`
+    `pandoc --version`
+
 
 Add the `PATH=$HOME/.cabal/bin:$PATH` command to [~/.profile](http://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path) so `pandoc` available on next restart.
 
