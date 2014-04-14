@@ -14,7 +14,7 @@ modified: 2013-10-29
 days = c(9, 3, 10, 8, 4, 11)
 ```
 
-The "Date Accepted" and "Date Completed" are a public guilt-trip to complete reviews on time, which I started tracking October 2013. As of October 2013, my time average time to completion for reviews is `r  sum(days)/length(days)` (working) days. 
+The "Date Accepted" and "Date Completed" are a public guilt-trip to complete reviews on time, which I started tracking October 2013. As of October 2013, my time average time to completion for reviews is `r sum(days)/length(days)` (working) days. 
 
 
 | Year | Journal | Re-review? | Date Accepted | Date Completed |

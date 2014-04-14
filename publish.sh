@@ -3,18 +3,21 @@
 ## Script modified from https://github.com/cboettig/labnotebook/blob/master/publish.sh 
 
 # check if any .Rmd files in _posts. if yes, knit to .md
-if [ -e _posts/*.Rmd ]
+cd _posts
+if [ -e ./*.Rmd ]
 then
     # convert all Rmarkdown (Rmd) posts to md
-    for f in _posts/*.Rmd
+    for f in ./*.Rmd
     do 
         echo "Processing $f to md"
         knit -n $f # Rmd to md only, no html generated
-        mv $f _posts/_Rmd_cache/. # move Rmd file so only md file is used by jekyll. Rmd_cache should be 
+        mv $f _Rmd_cache/. # move Rmd file so only md file is used by jekyll. Rmd_cache should be 
                       # excluded in _config.yml
         echo "Moved $f to Rmd_cache"
     done
 fi
+
+cd .. # back to root directory
 
 ## Compile the site
 jekyll build
