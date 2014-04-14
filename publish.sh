@@ -3,7 +3,7 @@
 ## Script modified from https://github.com/cboettig/labnotebook/blob/master/publish.sh 
 
 # check if any .Rmd files in _posts. if yes, knit to .md
-if [ -e posts/*.Rmd ]
+if [ -e _posts/*.Rmd ]
 then
     # convert all Rmarkdown (Rmd) posts to md
     for f in *.Rmd
