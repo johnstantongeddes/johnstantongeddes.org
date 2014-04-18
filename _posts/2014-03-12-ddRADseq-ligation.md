@@ -24,7 +24,7 @@ Performed adapter ligation for both ApPopGen (JSG001) and ApAdaPt (JSG002) plate
 
 * Normalized all samples to 50 ng which required all 38 ug of digested DNA for some samples. Thus, increased reaction volume to 50 ul, and correspondingly the volume of adapters P1 and P2 to 2.5 ul per reaction.
 * Made working adapter stocks for ligation using [ddRAD ligation molarity calculator](https://docs.google.com/spreadsheet/ccc?key=0Ar5IymziRJ_9dEtyYzRfd0cteDc1cEM1ekN5M1doZEE&usp=drive_web#gid=0) with 10x diluted (4umol/ul) annealed adapter stocks.
-* Made T4 master mix for two plates - 1 ul T4 in 400 ul T4 10X buffer, which works out to about [20 units per sample]({% post_url 2014-03-10-Monday-notes %}.
+* Made T4 master mix for two plates - 1 ul T4 in 400 ul T4 10X buffer, which works out to about [20 units per sample]({% post_url 2014-03-10-Monday-notes %}).
 * Added H2O to a total reaction volume of 50 ul.
 * Transfered samples to PCR plate so I could do incubation in PCR machine.
 * Incubated 30 min at 23C, 10 min at 65C, and cooled 2C every 90 sec to room temp. 
