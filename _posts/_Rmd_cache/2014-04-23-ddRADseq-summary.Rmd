@@ -8,24 +8,31 @@ tags:
   - ddRADseq
 ---
 
-**Samples**
+```{r, echo=FALSE, results='hide'}
+options(warn = -1)
+library(knitr)
+library(pander)
+```
+
+### Samples
 
 DNA was extracted from 3 ants each from 6 lab colonies of *Aphaenogaster*. 
 
 ```{r table1, echo=FALSE, results='asis'}
-library(pander)
 sample <- c("T1", "T2", "T3", "T4", "T5", "T6")
 colony <- c("EW205", "EW110", "2012A1", "DG23", "20130818-Mike", "EW20 QR")
 conc_extraction <- c(42.4, 60, 29.1, 58, 34.9, 35.2)
-total_dna <- conc_extraction/1000*40
+total_dna <- conc_extraction*40
 
 table1 <- cbind(sample, colony, conc_extraction, total_dna)
 pandoc.table(table1, caption = "DNA concentration (ng/ul) and total mass in 40 ul", style = "rmarkdown")
 ```
 
+<br>
+
 Combined total DNA ~ `r round(sum(total_dna), 0)` ng 
 
-**Double digest**
+### Double digest
 
 50 ul rxn volume following NEB protocol 
 
@@ -50,7 +57,7 @@ Included "T7" Control sample of dH~2~O only.
 * Ln 2 - 6 are double-digested samples. Looks like digest worked well for all samples as concentration in the 180 - 220 bp window ranged from 0.84 - 3.64 ng/ul. 
 
 
-**AMPure Bead Purification**
+### AMPure Bead Purification
 
 - added 75 ul AMPure Beads to the 50 ul rxn. Incubated 5 min room temp
 - 2 min on magnetic plate. removed solution
@@ -61,7 +68,6 @@ Included "T7" Control sample of dH~2~O only.
 Quantified DNA using Qubit.
 
 ```{r table2, echo=FALSE, results='asis'}
-library(pander)
 sample <- c("T1", "T2", "T3", "T4", "T5", "T6", "T7")
 conc_extraction <- c(42.4, 60, 29.1, 58, 34.9, 35.2, NA)
 conc_digestion <- c(10.9, 24.5, 5.19, 10.2, 5.82, 2.1, 0.13)
@@ -74,20 +80,23 @@ pandoc.table(table2, caption = "DNA concentration (ng/ul) of samples after DNA e
 
 * DNA recovery is low, only `r mean(conc_digestion[1:6]/conc_extraction[1:6]) * 100`% on average.
 * Positive correlation between the input DNA and DNA after digestion.
+* T7 is the blank control - note low-level DNA contamination. 
 
-```{r digestion_cor} 
+```{r digestion_cor, echo=FALSE} 
 cor.test(conc_extraction[1:6], conc_digestion[1:6])
-plot(conc_extraction[1:6], conc_digestion[1:6])
+png("../assets/figure/digestion_cor.png")
+plot(conc_extraction[1:6], conc_digestion[1:6], xlab = "Conc. of samples after extraction (ng/ul)", ylab = "Conc. of samples after digestion (ng/ul)")
+dev.off()
 ```
 
-* T7 is the blank control - note low-level DNA contamination. 
+![Plot of sample concentrations after extraction vs after digestion.]({{ site.url }}/assets/figure/digestion_cor.png)
 
 
 **Ligation**
 
-Input 100 ng total DNA from each sample for ligation. 
+Input 100 ng total DNA from each sample for ligation. Volume of each sample to use as input for ligation reaction:
 
-Sample        Volume DNA      
+Sample        Volume DNA (ul)      
 --------    --------------  
 T1               9.2 
 T2               4.0 
@@ -114,7 +123,6 @@ H~2~O             to 50 ul
 ![Bioanalyzer results from ligation and pooled samples]({{ site.url }}/assets/files/UVMAGTC-JS-3859_Cahan-4-22-2014_DNA_1000_DE20901668_2014-04-22_08-45-23.pdf )
 
 ```{r table3, echo=FALSE, results='asis'}
-library(pander)
 sample <- c("T1", "T2", "T3", "T4", "T5", "T6", "T7")
 bioan_digestion <- c(0.32, 2.9, 1.5, 0.9, 1.4, 0.7, NA)
 bioan_ligation <- c(1.12, 0.28, 0.07, 1.78, 0.99, 5, 1.7)
@@ -126,13 +134,16 @@ pandoc.table(table3, caption = "DNA concentration (ng/ul) of samples after DNA e
 
 No correlation between Bioanalyzer concentrations for samples before and after ligation. 
 
-```{r digestion_cor} 
+```{r ligation_cor, echo = FALSE} 
 cor.test(bioan_digestion[1:6], bioan_ligation[1:6])
-plot(bioan_digestion[1:6], bioan_ligation[1:6])
+png("../assets/figure/ligation_cor.png")
+plot(bioan_digestion[1:6], bioan_ligation[1:6], ylab = "Conc. of samples after ligation (ng/ul)", xlab = "Conc. of samples after digestion (ng/ul)")
+dev.off()
 ```
 
+![Plot of sample concentrations after digestion vs after ligation.]({{ site.url }}/assets/figure/ligation_cor.png)
 
-**Size selection**
+### Size selection
 
 * Pooled 40 ul of each ligation in single 1.5 ml tube, leaving ~ 10 ul for diagnostics.
 * AMPure bead purification - modified rack method using 96-well magnet plate
@@ -144,7 +155,7 @@ plot(bioan_digestion[1:6], bioan_ligation[1:6])
   - ran gel for 2.5 hrs at 120V.
   - To size select (1) 200+-20 bp, (2) 300+-20 bp, (3) 400 +- 20bp, had to account for 76 bp of adapter sequence. Cut gel pieces 250 - 300 bp, 350 - 400 bp, 450 - 500 bp
   
-![gel size selection]({{ site.url }}/assets/files/gel_size_selection.png)
+#![Diagram of gel size selection. Dotted boxes show gel slices cut for size selection.]({{ site.url }}/assets/files/gel_size_selection.png)
 
   - QIAquick purification, eluting in 12 ul H~2~O
 
@@ -158,5 +169,12 @@ table4 <- cbind(Sample, descrip, Conc = bioan_conc)
 pandoc.table(table4, caption = "DNA concentration (ng/ul) of pooled samples for different gel size extractions.", style = "rmarkdown")
 ```
 
-Very little to no DNA in each pooled size selection.
+<br>
+
+**Very little to no DNA in each pooled size selection.**
+
+Possible places DNA lost
+
+* pooling
+* gel extraction
 
