@@ -4,7 +4,7 @@
 
 # check if any .Rmd files in _posts. if yes, knit to .md
 cd _posts
-if [ -e ./*.Rmd ]
+if [[ -n `ls | grep Rmd$` ]]	# 
 then
     # convert all Rmarkdown (Rmd) posts to md
     for f in ./*.Rmd
