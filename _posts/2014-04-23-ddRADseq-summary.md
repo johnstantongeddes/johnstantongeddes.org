@@ -9,14 +9,6 @@ tags:
 ---
 
 
-```
-## 
-## Attaching package: 'pander'
-## 
-## The following object is masked from 'package:knitr':
-## 
-##     pandoc
-```
 
 
 ### Samples
@@ -40,7 +32,7 @@ Table: DNA concentration (ng/ul) and total mass in 40 ul
 
 Combined total DNA ~ 1.0384 &times; 10<sup>4</sup> ng 
 
-### Double digest
+### Double digestion
 
 50 ul rxn volume following NEB protocol 
 
@@ -118,6 +110,7 @@ Table: DNA concentration (ng/ul) of samples after DNA extraction and after doubl
 
 ![Plot of sample concentrations after extraction vs after digestion.]({{ site.url }}/assets/figure/digestion_cor.png)
 
+<br>
 
 **Ligation**
 

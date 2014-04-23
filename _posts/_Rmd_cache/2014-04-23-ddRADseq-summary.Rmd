@@ -11,7 +11,7 @@ tags:
 ```{r, echo=FALSE, results='hide'}
 options(warn = -1)
 library(knitr)
-library(pander)
+suppressMessages(library(pander))
 ```
 
 ### Samples
@@ -32,7 +32,7 @@ pandoc.table(table1, caption = "DNA concentration (ng/ul) and total mass in 40 u
 
 Combined total DNA ~ `r round(sum(total_dna), 0)` ng 
 
-### Double digest
+### Double digestion
 
 50 ul rxn volume following NEB protocol 
 
@@ -91,6 +91,7 @@ dev.off()
 
 ![Plot of sample concentrations after extraction vs after digestion.]({{ site.url }}/assets/figure/digestion_cor.png)
 
+<br>
 
 **Ligation**
 
