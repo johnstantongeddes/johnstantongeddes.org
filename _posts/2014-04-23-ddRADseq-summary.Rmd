@@ -1,0 +1,162 @@
+---
+layout: posts
+categories: 
+  - ApGxL
+  - ApAdaPt
+title: ddRADseq round 2 summary
+tags: 
+  - ddRADseq
+---
+
+**Samples**
+
+DNA was extracted from 3 ants each from 6 lab colonies of *Aphaenogaster*. 
+
+```{r table1, echo=FALSE, results='asis'}
+library(pander)
+sample <- c("T1", "T2", "T3", "T4", "T5", "T6")
+colony <- c("EW205", "EW110", "2012A1", "DG23", "20130818-Mike", "EW20 QR")
+conc_extraction <- c(42.4, 60, 29.1, 58, 34.9, 35.2)
+total_dna <- conc_extraction/1000*40
+
+table1 <- cbind(sample, colony, conc_extraction, total_dna)
+pandoc.table(table1, caption = "DNA concentration (ng/ul) and total mass in 40 ul", style = "rmarkdown")
+```
+
+Combined total DNA ~ `r round(sum(total_dna), 0)` ng 
+
+**Double digest**
+
+50 ul rxn volume following NEB protocol 
+
+Reagent           Volume (ul)
+---------        -------------
+NlaIII                 1
+MluCl                  1
+DNA                   40   
+CutSmart Buffer        5
+H~2~O                  4 
+
+<br>
+
+3 hr digestion at 37°C.
+
+Included "T7" Control sample of dH~2~O only. 
+
+![Bioanalyzer results of double digested samples]({{ site.url }}/assets/files/Cahan-4-17-2014_DNA 1000_DE20901668_2014-04-17_11-00-58.pdf)
+
+* Ln 1, Ap001, is genomic DNA. Note smear above largest marker and no/very little DNA within assay range.
+
+* Ln 2 - 6 are double-digested samples. Looks like digest worked well for all samples as concentration in the 180 - 220 bp window ranged from 0.84 - 3.64 ng/ul. 
+
+
+**AMPure Bead Purification**
+
+- added 75 ul AMPure Beads to the 50 ul rxn. Incubated 5 min room temp
+- 2 min on magnetic plate. removed solution
+- added 200 ul 70% ethanol (fresh). removed. repeat
+- off plate, added 40 ul H~2~O. 1 min
+- on plate 2 min. transfered solution to new plate
+
+Quantified DNA using Qubit.
+
+```{r table2, echo=FALSE, results='asis'}
+library(pander)
+sample <- c("T1", "T2", "T3", "T4", "T5", "T6", "T7")
+conc_extraction <- c(42.4, 60, 29.1, 58, 34.9, 35.2, NA)
+conc_digestion <- c(10.9, 24.5, 5.19, 10.2, 5.82, 2.1, 0.13)
+
+table2 <- cbind(sample, conc_extraction, conc_digestion)
+pandoc.table(table2, caption = "DNA concentration (ng/ul) of samples after DNA extraction and after double digestion", style = "rmarkdown")
+```
+
+<br>
+
+* DNA recovery is low, only `r mean(conc_digestion[1:6]/conc_extraction[1:6]) * 100`% on average.
+* Positive correlation between the input DNA and DNA after digestion.
+
+```{r digestion_cor} 
+cor.test(conc_extraction[1:6], conc_digestion[1:6])
+plot(conc_extraction[1:6], conc_digestion[1:6])
+```
+
+* T7 is the blank control - note low-level DNA contamination. 
+
+
+**Ligation**
+
+Input 100 ng total DNA from each sample for ligation. 
+
+Sample        Volume DNA      
+--------    --------------  
+T1               9.2 
+T2               4.0 
+T3              19.3 
+T4               9.8  
+T5              17.2  
+T6              47.6  
+T7              40.0 
+
+<br>
+
+For each sample, combined DNA with adapter and T4 ligase. Determined concentration of adapters using [ligation molarity calculator](https://docs.google.com/spreadsheet/ccc?key=0Ar5IymziRJ_9dEtyYzRfd0cteDc1cEM1ekN5M1doZEE&usp=drive_web#gid=0). Made fresh working stock of the universal adapter P2. Rather than make a working stock for each adapter P1, just used 0.5 ul of adapters P1.1 - P1.7 for samples T1 - T7, respectively. Made master mix of universal adapter P2 following worksheet.
+
+Reagent         Volume (ul)
+----------     -------------              
+DNA               see above
+T4 mix            4
+P1 (4uM)             0.5
+P2 mix               3
+H~2~O             to 50 ul
+
+<br>
+
+![Bioanalyzer results from ligation and pooled samples]({{ site.url }}/assets/files/UVMAGTC-JS-3859_Cahan-4-22-2014_DNA_1000_DE20901668_2014-04-22_08-45-23.pdf )
+
+```{r table3, echo=FALSE, results='asis'}
+library(pander)
+sample <- c("T1", "T2", "T3", "T4", "T5", "T6", "T7")
+bioan_digestion <- c(0.32, 2.9, 1.5, 0.9, 1.4, 0.7, NA)
+bioan_ligation <- c(1.12, 0.28, 0.07, 1.78, 0.99, 5, 1.7)
+
+table3 <- cbind(sample, "Digestion conc" = bioan_digestion, "Ligation conc" = bioan_ligation)
+
+pandoc.table(table3, caption = "DNA concentration (ng/ul) of samples after DNA extraction and after double digestion.", style = "rmarkdown")
+```
+
+No correlation between Bioanalyzer concentrations for samples before and after ligation. 
+
+```{r digestion_cor} 
+cor.test(bioan_digestion[1:6], bioan_ligation[1:6])
+plot(bioan_digestion[1:6], bioan_ligation[1:6])
+```
+
+
+**Size selection**
+
+* Pooled 40 ul of each ligation in single 1.5 ml tube, leaving ~ 10 ul for diagnostics.
+* AMPure bead purification - modified rack method using 96-well magnet plate
+  - Total pool volume 320 ul. 
+  - 480 ul AMPure beads
+  - Two washes with 500 ul 70% EtOH
+  - Eluted in 30 ul H~2~O
+* Size selection
+  - ran gel for 2.5 hrs at 120V.
+  - To size select (1) 200+-20 bp, (2) 300+-20 bp, (3) 400 +- 20bp, had to account for 76 bp of adapter sequence. Cut gel pieces 250 - 300 bp, 350 - 400 bp, 450 - 500 bp
+  
+![gel size selection]({{ site.url }}/assets/files/gel_size_selection.png)
+
+  - QIAquick purification, eluting in 12 ul H~2~O
+
+```{r table4, echo=FALSE, results='asis'}
+Sample <- c("P1", "P2", "P3")
+descrip <- c("Pooled - size 200", "Pooled - size 300", "Pooled -size 400")
+bioan_conc <- c(0.18, 0, 0.01)
+
+table4 <- cbind(Sample, descrip, Conc = bioan_conc)
+
+pandoc.table(table4, caption = "DNA concentration (ng/ul) of pooled samples for different gel size extractions.", style = "rmarkdown")
+```
+
+Very little to no DNA in each pooled size selection.
+
