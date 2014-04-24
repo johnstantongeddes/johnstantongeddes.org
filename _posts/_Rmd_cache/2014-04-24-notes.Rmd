@@ -1,0 +1,71 @@
+---
+layout: posts
+categories: 
+  - ApTranscriptome
+  - CCThermBe
+title: Thursday notes
+tags: 
+  - BLAST
+---
+
+### ApTranscriptome
+
+As a complement to `topGO` approach, use [DAVID](http://david.abcc.ncifcrf.gov/) to focus on genes with high-quality annotations in model organisms *Apis* and *Drosophila*.
+
+Get these BLAST hits using [method]({% post_url 2013-12-31-notes %}) for annotation I tried before going to FastAnnotator.
+
+- Found Taxids on [NCBI](http://blast.ncbi.nlm.nih.gov/Blast.cgi) for
+  - Apis Taxid: 7459
+  - Drosophila Taxid: 7215
+- Searched [Entrez Protein Database](http://www.ncbi.nlm.nih.gov/protein/?term=txid7215%5BORGN%5D+OR+txid7459%5BORGN%5D) with query `txid7215[ORGN] OR txid7459[ORGN]`
+- Selected "Send to File" wiht format "GI list"
+    - generated list of 585,719 unique gi ids
+- Used list of GIs from the previous step with the `blastdb_aliastool` to build an aliased blastdb of just insects:
+
+    blastdb_aliastool -gilist apis_drosophila.gi.txt -db nr -out nr_apis_drosophila -title "Apis and Drosophila nr database"
+
+which gave output:
+
+> Converted 585719 GIs from apis_drosophila.gi.txt to binary format in nr_apis_drosophila.p.gil
+> Created protein nr_apis_drosophila BLAST (alias) database with 274099 sequences (out of 585719 in nr_apis_drosophila.p.gil, 47% found)
+
+- Tested search against new (aliased) database:
+
+    blastx -query query.fa -db nr_insecta -out querytest
+
+Worked! 
+
+Now...for the `blastx` of the whole caboodle, given problems I had before, trialed and used GNU `parallel` as [described on Biostars](https://www.biostars.org/p/63816/) to efficiently use all cores.
+
+Test script for 50 sequences
+
+    cat ../test.fa | parallel --block 100k --recstart '>' --pipe blastx -evalue 0.01 -outfmt 6 -db /home/data/databases/ncbi_db/nr_apis_drosophila -query - > result
+
+Moved analysis to Mason cluster - already had NCBI nr database downloaded there. Started script running...
+
+  
+### CCThermBe
+
+Meet with Grace to go over results. 
+
+Ideas for continuation of Grace's project:
+
+```{r, echo=FALSE}
+suppressMessages(library(knitcitations))
+```
+
+1. Positive control - use juvenile hormone which is known to promote foraging `r citep("10.1016/S0070-2153(06)74008-X")`
+  - juvenile hormone analog [methoprene](http://www.sigmaaldrich.com/catalog/product/fluka/33375?lang=en&region=US) used by `r citep("10.1007/s00360-011-0587-x")`
+2. If this works (e.g. treated callows more likely to become foragers), test suite of other environmental factors:
+  - paraquat
+  - infection
+  - development-heat stress
+  - etc.
+3. Otherwise, initiate new experiment:
+  - thermal adaptation of *Aphaenogaster* along elevational gradients in VT
+  - gene expression response to fungal infection
+
+  
+```{r, echo = FALSE, results = 'asis'}
+bibliography()
+```
