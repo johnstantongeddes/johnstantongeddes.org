@@ -51,6 +51,7 @@ Meet with Grace to go over results.
 Ideas for continuation of Grace's project:
 
 ```{r, echo=FALSE}
+library(methods)
 suppressMessages(library(knitcitations))
 ```
 
@@ -65,7 +66,9 @@ suppressMessages(library(knitcitations))
   - thermal adaptation of *Aphaenogaster* along elevational gradients in VT
   - gene expression response to fungal infection
 
-  
+
+### Bibliography
+
 ```{r, echo = FALSE, results = 'asis'}
 bibliography()
 ```
