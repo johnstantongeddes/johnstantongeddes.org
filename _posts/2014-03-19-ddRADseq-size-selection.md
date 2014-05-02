@@ -28,3 +28,9 @@ As we don't have access to a Pippin-Prep, performed size selection old school by
 * Extracted DNA using Qiagen QIAquick PCR Purification
     - surprised to see *a lot* of DNA in some tubes. enough to make a clear mass that partially blocked column
     - eluted in 10ul H2O and put in freezer
+
+![Image of gel]({{ site.url }}/assets/files/20140319_ddRADseq.jpb)
+
+<br>
+
+Note slight smear of digested DNA within sample lanes - confirms that there was DNA to excise.

@@ -26,9 +26,16 @@ tags:
   - Eluted in 30 ul H~2~O
 * Size selection
   - ran gel for 2.5 hrs at 120V.
+
+![Gel image]({{ site.url }}/assets/files/20140421_ddRADseq.jpg)
+
+<br>
+
+Note very little to no DNA staining.
+
   - To size select (1) 200+-20 bp, (2) 300+-20 bp, (3) 400 +- 20bp, had to account for 76 bp of adapter sequence. Cut gel pieces 250 - 300 bp, 350 - 400 bp, 450 - 500 bp
   
-![gel size selection]({{ site.url }}/assets/files/gel_size_selection.png)
+![Diagram of gel. Dotted lines showed excised gel pieces.]({{ site.url }}/assets/files/gel_size_selection.png)
 
   - QIAquick purification, eluting in 12 ul H~2~O
 * Sent all ligation samples (T1-T7) and 3 size-selected pooled samples (P1-P3) for Bioanalyzer analysis
