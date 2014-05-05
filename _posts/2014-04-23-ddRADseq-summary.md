@@ -8,9 +8,6 @@ tags:
   - ddRADseq
 ---
 
-
-
-
 ### Samples
 
 DNA was extracted from 3 ants each from 6 lab colonies of *Aphaenogaster*. 

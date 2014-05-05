@@ -16,11 +16,13 @@ Worked with SCH in lab to continue trouble-shooting ddRADseq protocol.
 
 1. To validate that digested samples contain DNA after purification, ran on gel
     - 1.5% low melt agarose gel for 1.5hrs at 120V
-    - Loaded 4 ul of each sample, 8 - 100 ng based on [previous]({% post_url 2014-04-23-ddRADseq-summary %}) data, with 1 ul orange gel loading dye
+    - Loaded 4 ul of each sample (8 - 100 ng based on [previous]({% post_url 2014-04-23-ddRADseq-summary %}) data) with 1 ul orange gel loading dye
+
+![Gel image]({{ site.url }}/assets/files/20140502-digested-DNA.jpg)
 
 <br>
 
-Note clear smears of DNA! Corresponds to [Bioanalyzer results of same samples]({% post_url 2014-04-23-ddRADseq-summary %})
+Note clear smears of DNA! Corresponds to [Bioanalyzer results of same samples]({% post_url 2014-04-23 ddRADseq-summary %})
 
 DNA is present after digestion and purification. Indicates that DNA is lost during ligation, pooling or size selection.
 
