@@ -49,7 +49,7 @@ Li, Z.-Q., Zhang, S., Ma, Y., Luo, J.-Y., Wang, C.-Y., Lv, L.-M., Dong, S.-L. & 
 
 Based on last week's discussion, proceed with gene expression quantification using the 'contaminated' transcriptome and remove those transcripts from the analysis. 
 
-Merged `git` branches to return to previous version - decided to update Sailfish to version 0.6.3 as this is the version available at time of publication (Patro et al. 2014)[http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.2862.html]
+Merged `git` branches to return to previous version - decided to update Sailfish to version 0.6.3 as this is the version available at time of publication [Patro et al. 2014](http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.2862.html)
 
 Ran into [previous problem](https://groups.google.com/forum/#!searchin/sailfish-users/john/sailfish-users/QAbwRPE7QX4/_ba6Ll9yWIAJ) with `/opt/software/Sailfish-0.6.2-Linux_x86-64/lib/libz.so.1: no version information available`. Solved as before by removing the version of liz.so.1 packaged with Sailfish. Note that I was not the only user [with this problem](https://groups.google.com/forum/#!searchin/sailfish-users/libz/sailfish-users/TidtfxihOM8/0hvO_Z6Um34J).
 
