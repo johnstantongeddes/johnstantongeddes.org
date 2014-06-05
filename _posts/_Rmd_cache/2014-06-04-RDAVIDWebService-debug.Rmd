@@ -1,0 +1,125 @@
+---
+layout: posts
+categories: 
+  - ApTranscriptome
+title: RDAVIDWebService debugging
+tags: 
+  - DAVID
+  - R
+  - Bioconductor
+  - functional annotation
+---
+
+### ApTranscriptome
+
+Still working with RDAVIDWebService. Emailed the developed with two questions. 
+
+> 1. When I upload my gene list on the DAVID web interface, I get a message that multiple species have been detected in the gene list, and that the default is to use all species in the list. This is what I want. However, after running `addList` with my target gene list and then looking at my DAVIDWebService object, I only see the top species marked as "Using". I've tried passing a list of comma-separated values to `setCurrentSpecies` as suggested by the DAVID API, but this only marks the first species in the list as "Using".  
+> 
+>     setCurrentSpecies(david, c(1,2,3,4,5))
+>     
+> Is there any way to select all species? 
+> 
+> 2. When I look at the results of `getClusterReport` I see many clusters with Enrichment < 1. This puzzles me as if the EASE threshold is 0.1, then the group enrichment score, geometric mean (in -log scale) of member's p-values, should have a minimum at 1 {= -log10(.1) }. Does the cluster report not use the default EASE score threshold of 0.1? Is there a way to set this using rDAVIDWebService?
+> 
+
+He promptly responded!
+
+> As regards your questions:
+> Thank you for reporting the bug. Actually it really does what you want but, DAVIDWebService?> $getCurrentSpeciesPosition only reports the first position. Hence show function only marks one specie. Nevertheless the analysis is being performed with your settings (all the available species). 
+> david<-DAVIDWebService$new(email="your@email")
+> 
+> IDs<-c("6678", "20692", "24791")
+> result<-david$addList(IDs,idType="ENTREZ_GENE_ID", listType="Gene",  listName="Sparc")
+> 
+> david
+> DAVIDWebService object to access DAVID's website. 
+> User email:  your@email
+> Available Gene List/s:  
+>    Name Using
+> 1 Sparc     *
+> Available Specie/s:  
+>                   Name Using
+> 1      Homo sapiens(1)     *
+> 2      Mus musculus(1)      
+> 3 Rattus norvegicus(1)      
+> Available Background List/s:  
+>               Name Using
+> 1      Homo sapiens     *
+> 2      Mus musculus      
+> 3 Rattus norvegicus 
+> 
+> ##Now you can set to use all the available species
+> setCurrentSpecies(david, 1:3)
+> 
+> ##Workaround for now. 
+> getCurrentSpeciesPosition2<-function(object){
+>     ans <- NA_character_
+>     if(length(getSpecieNames(object)) != 0){
+>       stub<-getStub(object)
+>       ans<-as.integer(strsplit(stub$getCurrentSpecies(), split = ",")[[1]]) + 1
+>     }
+>     return(ans)
+> }
+> 
+> getCurrentSpeciesPosition2(david)
+> [1] 1 2 3
+> 
+> The bug will be fixed on the next package release. Thank you very much.
+> 
+>      2. You are right!! At present DAVID API do not allow to filter by EASE score for clustering (Term or Genes) so does RDAVIDWebService. But, you can use DAVID website interface which allows to filter by EASE. Hope it works for you by now. I'll incorporate the fuzzy clustering inside R some time to avoid the limit of genes/terms, etc.
+> 
+> Best regards,
+> 
+> Cristobal 
+
+
+Great - confirmed that all species were used! 
+
+After this, I dug into the issue of the "Enrichment" score. According to the DAVID paper (Huang et al. 2008) the Enrichment score for each group is "the geometric mean of all the enrichment P-values (EASE scores) for each annotation term associated with the gene members in the group." From the example on the [RDAVIDWebService](http://www.bdmg.com.ar/?page_id=695) website, I confirmed that this was true:
+
+```{r enrichment_test}
+geometric_mean <- function(x) exp(mean(log(x)))
+
+pvals <- c(0.00957, 0.00957, 0.0734, 0.606)
+-log10(geometric_mean(pvals))
+```
+
+Equals the "Enrichment" value shown for cluster 3 in the example. But, when I did this for the top 6 clusters from my real data, only 2 of the 6 "Enrichment" scores matched my calculations?!?!
+
+~~~
+> A22.high.termCluster <- getClusterReport(david.connect, type = "Term")
+> head(summary(A22.high.termCluster))
+  Cluster Enrichment Members
+1       1   2.688536       8
+2       2   1.000000       8
+3       3   1.000000       7
+4       4   1.000000       6
+5       5   1.180198      15
+6       6   1.000000       6
+> 
+> 
+> geometric_mean <- function(x) exp(mean(log(x)))
+> 
+> 
+> -log10(geometric_mean(members(A22.high.termCluster)[[1]]$PValue))
+[1] 2.688536
+> -log10(geometric_mean(members(A22.high.termCluster)[[2]]$PValue))
+[1] 1.920356
+> -log10(geometric_mean(members(A22.high.termCluster)[[3]]$PValue))
+[1] 1.714705
+> -log10(geometric_mean(members(A22.high.termCluster)[[4]]$PValue))
+[1] 1.428437
+> -log10(geometric_mean(members(A22.high.termCluster)[[5]]$PValue))
+[1] 1.180198
+> -log10(geometric_mean(members(A22.high.termCluster)[[6]]$PValue))
+[1] 0.9292781
+~~~
+
+This is bizarre - why should some, but not all, of the results be wrong? I can't see any pattern that would suggest inappropriate rounding or something to do with the number of members in a cluster...just odd.
+
+
+While puzzling over this, started to think about ways that I could cluster the results from topGO. Again from Bioconductor, a potential approach is to use the [GOSemSim](http://www.bioconductor.org/packages/release/bioc/html/GOSemSim.html) package to evaluate semantic similarity among GO terms. This can be converted into a distance matrix used for hierarchical clustering or PCA to distinguish groups.  
+
+Advantages/Disadvantages of each approach??? 
+

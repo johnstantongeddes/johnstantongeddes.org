@@ -4,13 +4,15 @@ categories:
   - ApTranscriptome
 title: RDAVIDWebService debugging
 tags: 
-  - RDAVIDWebService
+  - DAVID
+  - R
+  - Bioconductor
   - functional annotation
 ---
 
 ### ApTranscriptome
 
-Still working with rDAVIDWebService. Emailed the developed with two questions. 
+Still working with RDAVIDWebService. Emailed the developed with two questions. 
 
 > 1. When I upload my gene list on the DAVID web interface, I get a message that multiple species have been detected in the gene list, and that the default is to use all species in the list. This is what I want. However, after running `addList` with my target gene list and then looking at my DAVIDWebService object, I only see the top species marked as "Using". I've tried passing a list of comma-separated values to `setCurrentSpecies` as suggested by the DAVID API, but this only marks the first species in the list as "Using".  
 > 
@@ -76,11 +78,16 @@ Great - confirmed that all species were used!
 
 After this, I dug into the issue of the "Enrichment" score. According to the DAVID paper (Huang et al. 2008) the Enrichment score for each group is "the geometric mean of all the enrichment P-values (EASE scores) for each annotation term associated with the gene members in the group." From the example on the [RDAVIDWebService](http://www.bdmg.com.ar/?page_id=695) website, I confirmed that this was true:
 
-```{r enrichment_test}
+
+```r
 geometric_mean <- function(x) exp(mean(log(x)))
 
 pvals <- c(0.00957, 0.00957, 0.0734, 0.606)
 -log10(geometric_mean(pvals))
+```
+
+```
+## [1] 1.348
 ```
 
 Equals the "Enrichment" value shown for cluster 3 in the example. But, when I did this for the top 6 clusters from my real data, only 2 of the 6 "Enrichment" scores matched my calculations?!?!
@@ -120,3 +127,4 @@ This is bizarre - why should some, but not all, of the results be wrong? I can't
 While puzzling over this, started to think about ways that I could cluster the results from topGO. Again from Bioconductor, a potential approach is to use the [GOSemSim](http://www.bioconductor.org/packages/release/bioc/html/GOSemSim.html) package to evaluate semantic similarity among GO terms. This can be converted into a distance matrix used for hierarchical clustering or PCA to distinguish groups.  
 
 Advantages/Disadvantages of each approach??? 
+
