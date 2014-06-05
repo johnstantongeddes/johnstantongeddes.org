@@ -16,10 +16,11 @@ Change post-installation:
 
 - [Install R](http://cran.r-project.org/bin/linux/ubuntu/README)
 - [Install emacs 24.3](https://launchpad.net/~cassou/+archive/emacs) from PPA
-- Install git
+- Install git for version control.
 - [Install TeX Live 2013](https://launchpad.net/~texlive-backports/+archive/ppa)
 - [Install Zotero](https://github.com/smathot/zotero_installer)
 - Install Jekyll for online lab notebook - see detailed post [here]({% post_url 2014-06-02-install-jekyll %})
+- Install and configure [s3cmd](http://s3tools.org/s3cmd) for managing Amazon S3.
 
 
 **Hardware**
