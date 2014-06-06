@@ -39,8 +39,8 @@ Specifcally, I calculated the semantic similarity among all GO terms for an enri
 
 I was then able to assign a functional name to each cluster of related-GO terms. For example, here's the clustering of *A. picea* *High* genes:
 
-![A. picea high cluster](({{ site.url }}/assets/files/A22_high_gsea_hclust_labeled.png))
+![A. picea high cluster]({{ site.url }}/assets/files/A22_high_gsea_hclust_labeled.png)
 
 and here's the clustering for *A. picea* *Low* genes:
 
-![A. picea low cluster](({{ site.url }}/assets/files/A22_low_gsea_hclust_labeled.png))
+![A. picea low cluster]({{ site.url }}/assets/files/A22_low_gsea_hclust_labeled.png)

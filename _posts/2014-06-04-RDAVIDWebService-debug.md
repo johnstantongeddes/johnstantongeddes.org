@@ -25,54 +25,56 @@ Still working with RDAVIDWebService. Emailed the developed with two questions.
 
 He promptly responded!
 
-> As regards your questions:
-> Thank you for reporting the bug. Actually it really does what you want but, DAVIDWebService?> $getCurrentSpeciesPosition only reports the first position. Hence show function only marks one specie. Nevertheless the analysis is being performed with your settings (all the available species). 
-> david<-DAVIDWebService$new(email="your@email")
-> 
-> IDs<-c("6678", "20692", "24791")
-> result<-david$addList(IDs,idType="ENTREZ_GENE_ID", listType="Gene",  listName="Sparc")
-> 
-> david
-> DAVIDWebService object to access DAVID's website. 
-> User email:  your@email
-> Available Gene List/s:  
->    Name Using
-> 1 Sparc     *
-> Available Specie/s:  
->                   Name Using
-> 1      Homo sapiens(1)     *
-> 2      Mus musculus(1)      
-> 3 Rattus norvegicus(1)      
-> Available Background List/s:  
->               Name Using
-> 1      Homo sapiens     *
-> 2      Mus musculus      
-> 3 Rattus norvegicus 
-> 
-> ##Now you can set to use all the available species
-> setCurrentSpecies(david, 1:3)
-> 
-> ##Workaround for now. 
-> getCurrentSpeciesPosition2<-function(object){
->     ans <- NA_character_
->     if(length(getSpecieNames(object)) != 0){
->       stub<-getStub(object)
->       ans<-as.integer(strsplit(stub$getCurrentSpecies(), split = ",")[[1]]) + 1
->     }
->     return(ans)
-> }
-> 
-> getCurrentSpeciesPosition2(david)
-> [1] 1 2 3
-> 
-> The bug will be fixed on the next package release. Thank you very much.
-> 
->      2. You are right!! At present DAVID API do not allow to filter by EASE score for clustering (Term or Genes) so does RDAVIDWebService. But, you can use DAVID website interface which allows to filter by EASE. Hope it works for you by now. I'll incorporate the fuzzy clustering inside R some time to avoid the limit of genes/terms, etc.
-> 
-> Best regards,
-> 
-> Cristobal 
+~~~
+As regards your questions:
+Thank you for reporting the bug. Actually it really does what you want but, DAVIDWebService$getCurrentSpeciesPosition only reports the first position. Hence show function only marks one specie. Nevertheless the analysis is being performed with your settings (all the available species). 
 
+david<-DAVIDWebService$new(email="your@email")
+
+IDs<-c("6678", "20692", "24791")
+result<-david$addList(IDs,idType="ENTREZ_GENE_ID", listType="Gene",  listName="Sparc")
+
+david
+DAVIDWebService object to access DAVID's website. 
+User email:  your@email
+Available Gene List/s:  
+   Name Using
+1 Sparc     *
+Available Specie/s:  
+                  Name Using
+1      Homo sapiens(1)     *
+2      Mus musculus(1)      
+3 Rattus norvegicus(1)      
+Available Background List/s:  
+              Name Using
+1      Homo sapiens     *
+2      Mus musculus      
+3 Rattus norvegicus 
+
+##Now you can set to use all the available species
+setCurrentSpecies(david, 1:3)
+
+##Workaround for now. 
+getCurrentSpeciesPosition2<-function(object){
+    ans <- NA_character_
+    if(length(getSpecieNames(object)) != 0){
+      stub<-getStub(object)
+      ans<-as.integer(strsplit(stub$getCurrentSpecies(), split = ",")[[1]]) + 1
+    }
+    return(ans)
+}
+
+getCurrentSpeciesPosition2(david)
+[1] 1 2 3
+
+The bug will be fixed on the next package release. Thank you very much.
+
+     2. You are right!! At present DAVID API do not allow to filter by EASE score for clustering (Term or Genes) so does RDAVIDWebService. But, you can use DAVID website interface which allows to filter by EASE. Hope it works for you by now. I'll incorporate the fuzzy clustering inside R some time to avoid the limit of genes/terms, etc.
+
+Best regards,
+
+Cristobal 
+~~~
 
 Great - confirmed that all species were used! 
 

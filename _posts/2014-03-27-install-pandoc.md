@@ -43,7 +43,7 @@ Due to my frustration and lack of a clear reference online, posted
     `pandoc --version`
 
 
-Add the `PATH=$HOME/.cabal/bin:$PATH` command to [~/.profile](http://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path) so `pandoc` available on next restart.
+Add the `PATH=$HOME/.cabal/bin:$PATH` command to [~/.bashrc](http://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path) so `pandoc` available on next restart.
 
 
 [^1]: At least, couldn't get it to work on my Ubuntu 13.10 desktop, though I could get it to work on a Mac running an *older* version of Pandoc. 
