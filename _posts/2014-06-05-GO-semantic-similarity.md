@@ -13,14 +13,12 @@ tags:
   - AE inquired about status of *Aphaenogaster* genome
     - need to collect colony from Molly Bog and extract gDNA for PacBio!
   - deferred next meeting until August due to busy field schedules
-  
 - Identified three ant species working with NG and **Field Guide to the Ants of New England** 
   - [Tapinoma sessile](http://www.antweb.org/description.do?genus=tapinoma&name=sessile&rank=species) collected from top of Stowe Pinnacle VT
   - [Prenolepsis imparis](http://www.antweb.org/description.do?rank=species&name=imparis&genus=prenolepis&project=coloradoants) collected by NG from Shelburne VT
   - [Aphaenogaster picea](http://www.antweb.org/description.do?genus=aphaenogaster&species=picea&rank=species&project=allantwebants) collected from East Woods, Burlington VT. confirmed what I knew...
-
 - Centennial ms  
- 
+- Started DNA extraction for 20 *Aphaenogaster* from East Woods for ddRADseq round 3
 
 ### ApTranscriptome
 
@@ -35,7 +33,7 @@ Issue (2) of the database is a larger problem. Annecdotal discussion on [biostar
 
 **At this point - my thoughts are to give up on DAVID.**
 
-To get the main benefits of the DAVID analysis, clustering of related terms, I continued with clustering related GO terms using  [GOSemSim](http://www.bioconductor.org/packages/release/bioc/html/GOSemSim.html) R/Bioconductor package as [yesterday]({% post_url 2014-06-04 RDAVIDWebService-debug %})
+To get the main benefits of the DAVID analysis, clustering of related terms, I continued with clustering related GO terms using  [GOSemSim](http://www.bioconductor.org/packages/release/bioc/html/GOSemSim.html) R/Bioconductor package as [yesterday]({% post_url 2014-06-04-RDAVIDWebService-debug %})
 
 Specifcally, I calculated the semantic similarity among all GO terms for an enriched category (e.g. *High* genes), calculated the distance among terms, and then plotted.
 
