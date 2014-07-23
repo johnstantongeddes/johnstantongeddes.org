@@ -10,7 +10,9 @@ tags:
 
 Finally, success with the ddRADseq protocol! 
 
-![Gel image of PCR titration of pooled DNA fragments for ddRADseq. Top row contains samples from NlaIII - MluCI double digestion. Bottom row contains samples from EcoRI - SPhI double digestion. Wells are (1) 100 bp ladder (2) 12 cycles (3) 14 cycles (4) 100 bp ladder (5) 16 cycles (6) 20 cycles (7) 100 bp ladder.]({{ site.url }}/assets/files/20140627_ddRAD_labeled.png)
+<figure>
+<img src="http://www.johnstantongeddes.org/assets/files/20140627_ddRAD_labeled.png" alt="Gel image of PCR titration of pooled DNA fragments for ddRADseq. Top row contains samples from NlaIII - MluCI double digestion. Bottom row contains samples from EcoRI - SPhI double digestion. Wells are (1) 100 bp ladder (2) 12 cycles (3) 14 cycles (4) 100 bp ladder (5) 16 cycles (6) 20 cycles (7) 100 bp ladder." style="width: 50%; height: 50%" align="middle"/><figcaption>Gel image of PCR titration of pooled DNA fragments for ddRADseq. Top row contains samples from NlaIII - MluCI double digestion. Bottom row contains samples from EcoRI - SPhI double digestion. Wells are (1) 100 bp ladder (2) 12 cycles (3) 14 cycles (4) 100 bp ladder (5) 16 cycles (6) 20 cycles (7) 100 bp ladder.</figcaption>
+</figure>
 
 <br>
 
