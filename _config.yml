@@ -11,6 +11,7 @@ author :
 url: http://www.johnstantongeddes.org
 
 baseurl : 
+encoding: "utf-8"
 
 ## markdown parser
 markdown : pandoc
