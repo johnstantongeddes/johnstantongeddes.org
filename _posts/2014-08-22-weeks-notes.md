@@ -91,7 +91,7 @@ Pooled samples using Qubit values for all to get 200nM for each sample
 - Dropped J2-A as Bioanalyzer showed no DNA
 - Only 4.2 ul available for J1-P
 
-Total volume = 35.9 ul containing `r round(200 * 13 + 4.2*31.16, 2)` for a final concentration of `r round((200 * 13 + 4.2*31.16) / 35.9, 1)` nM/ul.
+Total volume = 35.9 ul containing 2,730 nM for a final concentration of 76 nM/ul.
 
 **KAPA qPCR**
 
