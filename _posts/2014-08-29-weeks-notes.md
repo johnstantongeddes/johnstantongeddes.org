@@ -23,6 +23,8 @@ tags:
    
 **Results**
 
+![Gel image]({{ site.url }}/assets/img/pcr_20140825.png)
+
 Nothing! Ladder completely clear but no bands...maybe a light light band for Standard 1
 
 ### ApTranscriptome
@@ -43,6 +45,8 @@ Manuscript prep
 **Results**
 
 Amplification! All samples and standards show up clearly. 
+
+![Gel image]({{ site.url }}/assets/img/pcr_20140826.png)
 
 - today's samples (12 -- 24 cycles), 16 is clearly darker than 12 cycles, but 20 and 24 do not appear darker. 
 - yesterday's samples (4 -- 10 + 24 cycles) look similarly intense

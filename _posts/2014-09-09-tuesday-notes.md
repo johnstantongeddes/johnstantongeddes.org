@@ -57,7 +57,7 @@ sudo apt-get install emacs
 
 Installed [Sailfish](http://www.cs.cmu.edu/~ckingsf/software/sailfish/) binary and set paths in `~.profile`. Had to rename libz.so.1 as noted [here]() to prevent conflicts with other programs: `mv /home/ubuntu/software/Sailfish-0.6.3-Linux_x86-64/lib/libz.so.1 /home/ubuntu/software/Sailfish-0.6.3-Linux_x86-64/lib/libz.so.1.bak`
 
-### EMACS-ESS
+### Emacs-ESS
 
 While trying to install Emacs-ESS found that polymode had advanced [development](http://stackoverflow.com/questions/16172345/how-can-i-use-emacs-ess-mode-with-r-markdown) and could install through Emacs using [MELPA](https://github.com/milkypostman/melpa)
 
@@ -75,8 +75,9 @@ While trying to install Emacs-ESS found that polymode had advanced [development]
 
 >
 
-- Started emacs and installed polymode by
+- Started emacs and installed markdown-mode and then polymode by
 
+    M-x package-install markdown-mode
     M-x package-install polymode
     
 - Added to `.emacs`

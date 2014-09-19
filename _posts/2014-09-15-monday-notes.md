@@ -41,16 +41,17 @@ Tried to get `knitr::stich` to work so output would be dumped to file using comm
 
 **Minimum count**
 
-A number of times I've seen comments that transcripts with FPKM < 1 > are often removed from analysis. I tracked this rule-of-thumb to this quote (Mortazavi 2008)[^1])
+A number of times I've seen comments that transcripts with FPKM < 1 > are often removed from analysis. I tracked this rule-of-thumb to this quote (Mortazavi 2008)[1])
 
 >  At current practical sequencing capacity and cost (approx40 M mapped reads), transcript detection was robust at 1.0 RPKM and above for a typical 2-kilobase (kb) mRNA (approx80 individual sequence reads resulting in a P value <10-16). 
 
-More recently, a quantitative estimate of RNAseq determined that transcripts at less than 1,000 copies in original sample are lost during RNAseq library prep (assuming a starting input of about 1e9 mRNA molecules, 0.1% efficiency of library prep, 20x coverage) (Fu et al. 2014)[^2].
+More recently, a quantitative estimate of RNAseq determined that transcripts at less than 1,000 copies in original sample are lost during RNAseq library prep (assuming a starting input of about 1e9 mRNA molecules, 0.1% efficiency of library prep, 20x coverage) (Fu et al. 2014)[2].
 
 I had about 150 million reads from transcriptome libraries, with 12 pooled samples, there are about 11e6 reads per sample. Thus 1 TPM translates into ~ 12 starting copies of a transcript. To get to 1,000 copies of a transcript, minimum TPM should be `1000/11.6 = 86`! This seems quite stringent...
 
 Quick check with ApTranscriptome data:
 
+~~~
 > mean.TPM <- ddply(TPM.dt.sub, .(Transcript), summarize, mTPM = mean(TPM))
 > 
 > length(mean.TPM$mTPM)
@@ -59,12 +60,13 @@ Quick check with ApTranscriptome data:
 [1] 10125
 > length(which(mean.TPM$mTPM > 86))
 [1] 386
-    
+~~~
+
 Wow - only about 4% of transcripts reach this level!
 
 Discussed with SCH - though these may be true patterns, the RxNseq approach gives *replication* (in a sense) that we would expect only those with a true signal to show up as responsive, while those that are truly noise would just bounce around. The 'bootstrap' described above to address the consistency of gene expression quantification will partially address this. 
 
-[^1] Mortazavi, A., Williams, B.A., McCue, K., Schaeffer, L., and Wold, B. (2008). Mapping and quantifying mammalian transcriptomes by RNA-Seq. Nat Meth 5, 621–628.
+[1] Mortazavi, A., Williams, B.A., McCue, K., Schaeffer, L., and Wold, B. (2008). Mapping and quantifying mammalian transcriptomes by RNA-Seq. Nat Meth 5, 621–628.
 
 [2] Fu, G.K., Xu, W., Wilhelmy, J., Mindrinos, M.N., Davis, R.W., Xiao, W., and Fodor, S.P.A. (2014). Molecular indexing enables quantitative targeted RNA sequencing and reveals poor efficiencies in standard library preparations. PNAS 111, 1891–1896.
 
