@@ -9,14 +9,14 @@ tags:
 
 I'm leaving my career in academia as an evolutionary biologist to take a position as a data scientist. Yes, the hype is true: businesses do want people with analytical and computational skills. I'm excited about this move because it allows me to continue applying my skills, and learn new ones (hello Hadoop!) to even bigger data. Equally importantly, it allows me to live and spend more time with my family in a place we love. 
 
-[Many people](http://www.slate.com/blogs/browbeat/2013/10/24/quitting_academic_jobs_professor_zachary_ernst_and_other_leaving_tenure.html) have [written](https://chroniclevitae.com/news/216-why-so-many-academics-quit-and-tell) about leaving academia[^1], so here's my contribution. [Unlike](http://zacharyernst.blogspot.com/2013/10/why-i-jumped-out-of-ivory-tower.html) [others](http://chronicle.com/article/Location-Location-Location/134264/?cid=oh&utm_source=oh&utm_medium=en), my story is mostly happy, maybe cautionary. 
+[Many people](http://www.slate.com/blogs/browbeat/2013/10/24/quitting_academic_jobs_professor_zachary_ernst_and_other_leaving_tenure.html) have [written](https://chroniclevitae.com/news/216-why-so-many-academics-quit-and-tell) about leaving academia [1], so here's my contribution. [Unlike](http://zacharyernst.blogspot.com/2013/10/why-i-jumped-out-of-ivory-tower.html) [others](http://chronicle.com/article/Location-Location-Location/134264/?cid=oh&utm_source=oh&utm_medium=en), my story is mostly happy, maybe cautionary. 
 
 Looking back on how I got to where I am, I feel the best analogy is going for a hike in a box canyon in a beautiful place such as Sedona. At the start, the canyon is wide, beautiful and seemingly endless. About half-way down it starts to get narrower, but you don't worry because it's still beautiful and you're enjoying yourself. But then, you get to the end, and the only way out is a steep climb to the top. 
 
-<figure>
-    <img src="{{ site.url }}/assets/img/box_canyon.JPG" title="Box canyon" alt="correlation plot" width=200 height=150 style=float:right">
-    <figcaption> Box canyon near Sedona, AZ. Photo: John Stanton-Geddes</figcaption>
-</figure>
+<img src="{{ site.url }}/assets/img/box_canyon.JPG" title="Box canyon" alt="correlation plot" width=400 height=300 style=float:right">
+**Box canyon near Sedona, AZ. Photo: John Stanton-Geddes**
+
+</br>
 
 I got to the end of the canyon, and I could see the path out. I even think I could have climbed there. But I'd had a good long hike, and surprisingly, I found a side canyon. Climbing out was no longer the only, or even the best, way to continue.
 
@@ -58,4 +58,4 @@ Wait - there is a lesson! NSF - it's time to start paying postdocs better. You c
 So long, and thanks for all the data.
 
 
-^1. I'd fall into the 'Explainer' category, which is consistent with my philosophy to make my scientific work as open as possible...including leaving.
+[1] I'd fall into the 'Explainer' category, which is consistent with my philosophy to make my scientific work as open as possible...including leaving.
