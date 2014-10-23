@@ -27,7 +27,7 @@ Here's how I set up my Amazon EC2 instance. Assumes that you already have an Ama
     - Open "Security groups"
     - Select "default" group
     - Choose "Inbound" tab and click "Edit"
-    - Click "Add rule". Type = SSH. Set source to "My IP" or "Anywhere" if you want others to be able to access Instance
+    - Click "Add rule". Type = SSH. Set source to "My IP" or "Custom IP" for varying access/security levels.
 5. From EC2 Dashboard, "Launch Instance"
     - select Ubuntu Server 14.04 or other
     - select key pair that you previously downloaded
@@ -36,15 +36,20 @@ Here's how I set up my Amazon EC2 instance. Assumes that you already have an Ama
     - click "Connect" button and follow directions to connect by SSH from terminal on local machine, making sure to specificy correct path to key pair
 7. Explore Instance
     - `df -h` to look at storage
-8. Attach EBS volume
+8. Create EBS volume
     - follow [these steps](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-add-volume-to-instance.html) to add a volume to Instance if you didn't do so when launching Instance
-    - volume needs to be mounted to use. Check that is available with `lsblk`
-    - format volume **only the first time or you'll delete data** `sudo mkfs -t ext4 /dev/xvdb`
-    - mount drive `sudo mkdir /mnt/datasets`
-    - `sudo mount /dev/xvdb /mnt/datasets`
+      - from Console, select Elastic Block Store - Volumes
+      - select "Create Volume"
+      - specify size, type and location **make sure location is the same as your Instance**
+      - once volume is created, select "Action" menu and "Attach Volume". select your instance
+      - **first time only or you'll delete data**: format volume using `sudo mkfs -t ext4 /dev/xvdb`
+     
+9. Attach EBS volume to Instance
+    - check that your volume is attached (if you followed step 8, it should be): `lsblk`
+    - from your instance terminal, create directory to mount drive to: `sudo mkdir /mnt/datasets`
+    - mount drive: `sudo mount /dev/xvdb /mnt/datasets`
     - check that volume is mounted `df -h`
     
-
 All right! Now I have a functioning Ubuntu AMI.
 
 Installed some default programs: R, emacs
